@@ -32,6 +32,7 @@
   },
   "services": {
     "title": "What I do",
+    "subtitle": "From the interface to the backend: I build complete digital products, from frontend to automation, always focused on quality and results.",
     "items": {
       "frontend": {
         "title": "Websites & Frontend",
