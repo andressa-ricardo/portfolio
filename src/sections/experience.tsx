@@ -81,7 +81,7 @@ export function Experience() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 onClick={() => setSelected(entry)}
-                className="group w-full rounded-2xl border border-border p-4 text-left transition-all duration-200 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 sm:p-6"
+                className="group w-full rounded-2xl border border-border p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 sm:p-6"
               >
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0 flex-1">

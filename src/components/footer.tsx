@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useTranslation } from "@/components/language-provider";
 import { socials } from "@/data/resume";
 
@@ -30,7 +31,13 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border py-10">
-      <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between"
+      >
         {/* Social icons */}
         <div className="flex items-center gap-4">
           {socials.map((social) => (
@@ -40,7 +47,7 @@ export function Footer() {
               target={social.icon === "email" ? undefined : "_blank"}
               rel={social.icon === "email" ? undefined : "noopener noreferrer"}
               aria-label={social.name}
-              className="text-muted transition-colors duration-200 hover:text-accent"
+              className="text-muted transition-all duration-200 hover:-translate-y-0.5 hover:text-accent"
             >
               {ICONS[social.icon]}
             </a>
@@ -51,7 +58,7 @@ export function Footer() {
         <p className="text-xs text-muted">
           &copy; {new Date().getFullYear()} {t.header.name}. {t.footer.rights}
         </p>
-      </div>
+      </motion.div>
     </footer>
   );
 }

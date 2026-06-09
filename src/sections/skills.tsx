@@ -54,9 +54,13 @@ function LevelDots({ level }: { level: SkillLevel }) {
   return (
     <div className="flex gap-1">
       {Array.from({ length: 5 }).map((_, i) => (
-        <div
+        <motion.div
           key={i}
-          className={`h-2 w-2 rounded-full transition-colors ${
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.25, delay: i * 0.06, ease: "backOut" }}
+          className={`h-2 w-2 rounded-full ${
             i < level ? "bg-accent" : "bg-border"
           }`}
         />
@@ -83,11 +87,11 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="rounded-2xl border border-border p-5 sm:p-6"
+              className="group rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 sm:p-6"
             >
               {/* Category header */}
               <div className="mb-5 flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
                   {CATEGORY_ICONS[cat]}
                 </div>
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">

@@ -38,9 +38,10 @@ export function Header() {
             <a
               key={key}
               href={`#${key}`}
-              className="rounded-md px-3 py-2 text-sm text-muted transition-colors duration-200 hover:text-foreground"
+              className="group relative rounded-md px-3 py-2 text-sm text-muted transition-colors duration-200 hover:text-foreground"
             >
               {t.nav[key]}
+              <span className="absolute inset-x-3 bottom-1 h-px origin-left scale-x-0 rounded-full bg-gradient-to-r from-accent to-violet-500 transition-transform duration-200 group-hover:scale-x-100" />
             </a>
           ))}
         </nav>

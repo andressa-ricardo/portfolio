@@ -16,26 +16,37 @@ export function About() {
       <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-16">
         {/* Photo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="w-full max-w-[240px] shrink-0 sm:max-w-[280px]"
         >
-          <div className="relative">
+          <motion.div
+            className="relative"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+          >
             {/* Decorative ring */}
-            <div className="absolute -inset-3 rounded-3xl border-2 border-accent/20" />
+            <motion.div
+              className="absolute -inset-3 rounded-3xl border-2 border-accent/20"
+              animate={{ rotate: [0, 2, 0, -2, 0] }}
+              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            />
             {/* Decorative dot */}
-            <div className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-accent" />
+            <span className="absolute -right-2 -top-2 flex h-4 w-4">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+              <span className="relative inline-flex h-4 w-4 rounded-full bg-accent" />
+            </span>
             <Image
               src="/andressa_picture.jpeg"
               alt={t.about.photoAlt}
               width={280}
               height={280}
-              className="relative aspect-square w-full rounded-2xl object-cover"
+              className="relative aspect-square w-full rounded-2xl object-cover shadow-xl shadow-accent/10"
               priority
             />
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Text content */}
