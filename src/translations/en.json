@@ -17,8 +17,9 @@
     "name": "Andressa",
     "role": "Fullstack Developer",
     "description": "Creating modern digital solutions focused on quality, efficiency, and intuitive experiences that connect people and technology.",
-
+    "badge": "Available for new projects",
     "cta": "Get in touch",
+    "secondaryCta": "View work",
     "download": "Download CV"
   },
   "about": {
@@ -73,6 +74,7 @@
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
+      "cloud": "Cloud & DevOps",
       "tools": "Tools",
       "database": "Database"
     }

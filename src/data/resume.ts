@@ -107,7 +107,7 @@ export type SkillLevel = 1 | 2 | 3 | 4 | 5;
 export interface Skill {
   name: string;
   level: SkillLevel;
-  category: "frontend" | "backend" | "tools" | "database";
+  category: "frontend" | "backend" | "cloud" | "tools" | "database";
 }
 
 export const skills: Skill[] = [
@@ -127,6 +127,15 @@ export const skills: Skill[] = [
   { name: "Supabase", level: 3, category: "backend" },
   { name: "Java", level: 2, category: "backend" },
 
+  // Cloud & DevOps
+  { name: "AWS", level: 3, category: "cloud" },
+  { name: "Amazon EC2", level: 3, category: "cloud" },
+  { name: "Amazon S3", level: 3, category: "cloud" },
+  { name: "Cloudflare R2", level: 3, category: "cloud" },
+  { name: "Vercel", level: 4, category: "cloud" },
+  { name: "n8n", level: 3, category: "cloud" },
+  { name: "CI/CD", level: 3, category: "cloud" },
+
   // Tools
   { name: "Git & GitHub", level: 5, category: "tools" },
   { name: "VS Code", level: 5, category: "tools" },
@@ -142,6 +151,7 @@ export const skills: Skill[] = [
 export const skillCategories = [
   "frontend",
   "backend",
+  "cloud",
   "tools",
   "database",
 ] as const;
