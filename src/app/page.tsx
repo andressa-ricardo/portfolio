@@ -2,6 +2,7 @@
 
 import { Hero } from "@/sections/hero";
 import { About } from "@/sections/about";
+import { Services } from "@/sections/services";
 import { Experience } from "@/sections/experience";
 import { Skills } from "@/sections/skills";
 import { Education } from "@/sections/education";
@@ -14,6 +15,7 @@ export default function Home() {
     <main>
       <Hero />
       <About />
+      <Services />
       <Experience />
       <Skills />
       <Education />

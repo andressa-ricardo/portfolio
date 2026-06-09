@@ -4,6 +4,7 @@
   },
   "nav": {
     "about": "Sobre",
+    "services": "Serviços",
     "experience": "Experiência",
     "skills": "Skills",
     "education": "Educação",
@@ -27,6 +28,27 @@
     "available": "Disponível para projetos e trabalhos",
     "skillsTitle": "Habilidades",
     "photoAlt": "Foto de Andressa"
+  },
+  "services": {
+    "title": "O que eu faço",
+    "items": {
+      "frontend": {
+        "title": "Websites & Frontend",
+        "desc": "Interfaces web modernas, responsivas e performáticas com React, Next.js e TypeScript."
+      },
+      "landing": {
+        "title": "Landing Pages",
+        "desc": "Páginas de alta conversão para produtos, lançamentos e captação de clientes."
+      },
+      "automation": {
+        "title": "Automação",
+        "desc": "Automação de processos e tarefas repetitivas com Node.js e Python para ganhar tempo."
+      },
+      "scraping": {
+        "title": "Web Scraping",
+        "desc": "Coleta e estruturação de dados de sites e APIs de forma estável e escalável."
+      }
+    }
   },
   "experience": {
     "title": "Experiência",
