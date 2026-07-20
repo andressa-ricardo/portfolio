@@ -32,6 +32,192 @@ export interface ExperienceEntry {
 
 export const experienceEntries: ExperienceEntry[] = [
   {
+    id: "maos-livres",
+    type: "personal",
+    company: "Mãos Livres",
+    role: {
+      pt: "Co-Founder",
+      en: "Co-Founder",
+    },
+    period: { start: "2026-03", end: null },
+    shortDescription: {
+      pt: "Software house especializada em desenvolvimento de sistemas, automações e integrações para empresas.",
+      en: "Software house focused on custom software development, automation, and system integrations.",
+    },
+    overview: {
+      pt: `A Mãos Livres é uma software house especializada no desenvolvimento de sistemas sob medida, automações de processos e integrações entre plataformas. Nosso objetivo é transformar processos manuais em soluções digitais escaláveis que aumentam a produtividade das empresas.`,
+      en: `Mãos Livres is a software house specialized in custom software development, business process automation, and platform integrations. Our goal is to transform manual workflows into scalable digital solutions that improve business productivity.`,
+    },
+    fullDescription: {
+      pt: `Como cofundadora e desenvolvedora, participo tanto da estratégia da empresa quanto da execução técnica dos projetos.
+
+Minhas responsabilidades incluem:
+
+- Desenvolvimento de aplicações Web e Mobile
+- Arquitetura Front-end
+- Desenvolvimento de APIs
+- Automações de processos
+- Integrações entre plataformas
+- Levantamento de requisitos junto aos clientes
+- Planejamento técnico de novos produtos
+- Evolução contínua dos produtos da empresa`,
+      en: `As Co-Founder and Software Developer, I am involved in both the company's strategy and technical execution.
+
+My responsibilities include:
+
+- Web and Mobile application development
+- Frontend architecture
+- API development
+- Business process automation
+- Platform integrations
+- Requirements gathering
+- Technical planning
+- Continuous product development`,
+    },
+    technologies: [
+      "React",
+      "Next.js",
+      "React Native",
+      "Node.js",
+      "NestJS",
+      "TypeScript",
+      "Python",
+      "Docker",
+      "PostgreSQL",
+      "AWS",
+    ],
+    media: [],
+    link: "https://www.maoslivres.com/",
+  },
+  {
+    id: "agendamento-livre",
+    type: "personal",
+    company: "Agendamento Livre",
+    role: {
+      pt: "Lead Frontend Developer",
+      en: "Lead Frontend Developer",
+    },
+    period: { start: "2026-07", end: null },
+    shortDescription: {
+      pt: "Plataforma SaaS para gestão de agendamentos, clientes e serviços para empresas prestadoras de serviços.",
+      en: "SaaS platform for appointment scheduling, customer management, and service businesses.",
+    },
+    overview: {
+      pt: `O Agendamento Livre é um produto da Mãos Livres criado para digitalizar a gestão de empresas prestadoras de serviços, oferecendo agendamento online, gestão de clientes, profissionais, serviços e indicadores do negócio em uma única plataforma.`,
+      en: `Agendamento Livre is a Mãos Livres product built to digitalize service businesses by providing online scheduling, customer management, staff management, and business insights in a single platform.`,
+    },
+    fullDescription: {
+      pt: `Sou responsável pelo desenvolvimento Front-end do produto desde sua concepção, participando da definição das funcionalidades, arquitetura da aplicação e implementação das interfaces.
+
+Entre as funcionalidades desenvolvidas estão:
+
+- Sistema completo de agendamento online
+- Gestão de profissionais e serviços
+- Cadastro de empresas e onboarding
+- Gestão de clientes
+- Landing page institucional
+- Área administrativa
+- Componentes reutilizáveis
+- Internacionalização (i18n)
+- Interface responsiva
+- Integrações com notificações e automações`,
+      en: `I lead the Frontend development of the product from its initial conception, participating in feature definition, application architecture, and interface implementation.
+
+Main features include:
+
+- Complete online appointment scheduling
+- Staff and service management
+- Company onboarding
+- Customer management
+- Marketing landing page
+- Administrative dashboard
+- Reusable component library
+- Internationalization (i18n)
+- Responsive interfaces
+- Notification and automation integrations`,
+    },
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma",
+      "PostgreSQL",
+      "i18n",
+    ],
+    media: [],
+  },
+  {
+    id: "ondish-foods",
+    type: "fulltime",
+    company: "Ondish Foods",
+    role: {
+      pt: "Frontend Developer",
+      en: "Frontend Developer",
+    },
+    period: { start: "2025-11", end: null },
+    shortDescription: {
+      pt: "Desenvolvimento completo das aplicações Web e Mobile da plataforma de menu digital, reservas, pedidos e pagamentos para restaurantes.",
+      en: "Full frontend development of the platform's Web and Mobile applications for digital menus, reservations, ordering, and payments.",
+    },
+    overview: {
+      pt: `A Ondish Foods é uma plataforma que conecta restaurantes e clientes em Portugal, reunindo reservas de mesas, menu digital com QR Code, pedidos pelo celular e pagamentos online em um único ecossistema.
+
+A plataforma atende tanto clientes que desejam encontrar restaurantes, reservar mesas e realizar pedidos de forma prática quanto estabelecimentos que buscam digitalizar toda a operação, desde o gerenciamento do cardápio até o acompanhamento de pedidos em tempo real, através de aplicações Web e Mobile.`,
+      en: `Ondish Foods is a platform that connects restaurants and customers in Portugal, combining table reservations, QR code digital menus, mobile ordering, and online payments into a single ecosystem.
+
+The platform serves both customers looking for a seamless dining experience and restaurants seeking to fully digitalize their operations through Web and Mobile applications.`,
+    },
+    fullDescription: {
+      pt: `Sou responsável pelo desenvolvimento de toda a camada de Front-end da plataforma, atuando nas aplicações Web e Mobile.
+
+No ambiente web, desenvolvo e evoluo o Painel Administrativo, o Portal do Parceiro e o website institucional da empresa.
+
+Entre as principais funcionalidades desenvolvidas estão:
+
+- Gestão de restaurantes
+- Cadastro e gerenciamento de mesas
+- Gestão de cardápio, categorias e produtos
+- Cadastro de funcionários
+- Gerenciamento de pedidos em tempo real
+- Relatórios administrativos
+- Landing page institucional
+
+Também fui responsável pelo desenvolvimento completo do aplicativo mobile utilizando React Native e Expo, estruturando toda a arquitetura da aplicação, navegação, componentização, gerenciamento de estados locais e preparação para integração com o backend.
+
+Além disso, participo continuamente da implementação de novas funcionalidades, criação de componentes reutilizáveis, otimizações de performance, internacionalização (i18n), correções e melhorias de experiência do usuário em todas as aplicações da plataforma.`,
+      en: `I am responsible for the entire Frontend layer of the platform, working across both Web and Mobile applications.
+
+On the web platform, I develop and maintain the Admin Dashboard, Partner Portal, and the company's institutional website.
+
+Main features include:
+
+- Restaurant management
+- Table management
+- Menu, categories and products management
+- Employee management
+- Real-time order management
+- Administrative reports
+- Marketing landing page
+
+I also developed the complete mobile application using React Native and Expo, designing the application architecture, navigation, reusable components, local state management, and preparing the app for backend integration.
+
+Additionally, I continuously work on new features, reusable components, performance improvements, internationalization (i18n), bug fixes, and overall user experience improvements across the platform.`,
+    },
+    technologies: [
+      "React",
+      "Next.js",
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Tailwind CSS",
+      "i18n",
+      "Responsive Design",
+    ],
+    media: [],
+    link: "https://ondishfoods.pt/",
+  },
+  {
     id: "prodia",
     type: "personal",
     company: "Prodia",
@@ -93,7 +279,7 @@ This project demonstrates my ability to design and build a complete product, inc
       pt: "Full Stack Developer",
       en: "Full Stack Developer",
     },
-    period: { start: "2026-02", end: "2026-06" },
+    period: { start: "2026-04", end: "2026-07" },
     shortDescription: {
       pt: "Plataforma de IA para arquitetos que transforma fotos de projetos em renders realistas e vídeos cinematográficos, com sistema de créditos e pipelines assíncronos.",
       en: "AI platform for architects that turns project photos into realistic renders and cinematic videos, with credit-based billing and asynchronous pipelines.",
@@ -156,73 +342,7 @@ My work spans both backend (APIs, integrations, processing logic) and frontend (
     media: [],
     link: "https://criarch.ai/",
   },
-  {
-    id: "ondish-foods",
-    type: "fulltime",
-    company: "Ondish Foods",
-    role: {
-      pt: "Frontend Developer",
-      en: "Frontend Developer",
-    },
-    period: { start: "2025-11", end: null },
-    shortDescription: {
-      pt: "Desenvolvimento de interfaces web e mobile para plataforma de menu digital com pagamentos integrados e gestão inteligente para restaurantes.",
-      en: "Development of web and mobile interfaces for a digital menu platform with integrated payments and smart restaurant management.",
-    },
-    overview: {
-      pt: `A Ondish é uma plataforma que conecta restaurantes e clientes em Portugal, reunindo reservas, menu digital com QR Code, pedidos pelo celular e pagamento online em um só lugar. O cliente descobre restaurantes próximos, reserva mesa em segundos e, ao chegar, faz o scan do QR para pedir e pagar diretamente pelo telemóvel — sem filas.
 
-A solução atende tanto o lado B2C (clientes que querem comer fora sem espera) quanto o B2B (restaurantes que aumentam a rotação de mesas e substituem cadernos por gestão digital em tempo real), com aplicações web e mobile.`,
-      en: `Ondish is a platform connecting restaurants and diners in Portugal, bringing reservations, a QR-code digital menu, mobile ordering, and online payment together in one place. Customers discover nearby restaurants, book a table in seconds, and on arrival scan the QR code to order and pay straight from their phone — no queues.
-
-It serves both the B2C side (diners who want to eat out without waiting) and the B2B side (restaurants that increase table turnover and replace paper notebooks with real-time digital management), across web and mobile apps.`,
-    },
-    fullDescription: {
-      pt: `Atuo exclusivamente no desenvolvimento frontend da plataforma, sendo responsável pela construção das interfaces web do painel administrativo e do portal do parceiro (restaurantes).
-
-No painel administrativo, desenvolvi a interface utilizada pelos administradores para aprovação de restaurantes, gestão geral da plataforma e visualização consolidada das operações.
-
-No portal do parceiro, construí as telas onde os restaurantes realizam seu cadastro e gerenciam todas as informações do estabelecimento, incluindo:
-
-- Cadastro e edição de dados do restaurante
-- Gestão de mesas, pratos e bebidas
-- Cadastro de funcionários
-- Visualização e gerenciamento de pedidos (aceitar, recusar e acompanhar status)
-- Acesso a relatórios semanais
-
-Meu trabalho envolve a criação de componentes reutilizáveis, organização de layouts responsivos e evolução contínua das telas com melhorias de usabilidade, consistência visual e experiência do usuário.
-
-No aplicativo mobile, atuo realizando ajustes e melhorias visuais conforme demandas do produto, incluindo alterações de cores, tamanhos, imagens e refinamentos de interface para manter a consistência da experiência entre web e mobile.
-
-Também desenvolvi a landing page institucional da plataforma, responsável pela apresentação do produto ao público e pela captação de restaurantes e clientes.`,
-      en: `I work exclusively on the frontend development of the platform, being responsible for building the web interfaces for the Admin Dashboard and the Partner Portal (restaurants).
-
-For the Admin Dashboard, I developed the interface used by administrators to approve restaurants, manage overall platform operations, and maintain a consolidated system overview.
-
-For the Partner Portal, I built the interfaces where restaurants register and manage all their business information, including:
-
-- Restaurant profile management
-- Tables, menu items, and drinks management
-- Staff registration
-- Order management (accept, reject, and track status)
-- Weekly reports and performance insights
-
-My work involves building reusable components, structuring responsive layouts, and continuously improving usability, visual consistency, and user experience.
-
-On the mobile application, I contribute by implementing requested visual adjustments and UI refinements, including updates to colors, spacing, sizing, images, and layout improvements to ensure consistency between web and mobile experiences.
-
-I also built the platform's marketing landing page, responsible for presenting the product to the public and driving acquisition of both restaurants and customers.`,
-    },
-    technologies: [
-      "React",
-      "React Native",
-      "TypeScript",
-      "UI/UX",
-      "Responsive Design",
-    ],
-    media: [],
-    link: "https://ondishfoods.pt/",
-  },
   {
     id: "athena-ti",
     type: "fulltime",
