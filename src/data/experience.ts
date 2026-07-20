@@ -268,7 +268,28 @@ This project demonstrates my ability to design and build a complete product, inc
       "Fal.ai",
       "AI Integrations",
     ],
-    media: [],
+    media: [
+      {
+        type: "video",
+        src: "/media/projects/prodia_v1.mp4",
+        alt: "Prodia video 1",
+      },
+      {
+        type: "video",
+        src: "/media/projects/prodia_v2.mp4",
+        alt: "Prodia video 2",
+      },
+      {
+        type: "video",
+        src: "/media/projects/prodia_v3.mp4",
+        alt: "Prodia video 3",
+      },
+      {
+        type: "video",
+        src: "/media/projects/prodia_v4.mp4",
+        alt: "Prodia video 4",
+      },
+    ],
   },
 
   {
@@ -569,3 +590,4 @@ The work was done using Node.js, Python, and TypeScript, with a focus on stabili
     media: [],
   },
 ];
+
