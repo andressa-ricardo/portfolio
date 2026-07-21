@@ -1,4 +1,4 @@
-export interface MediaItem {
+﻿export interface MediaItem {
   type: "image" | "video";
   src: string;
   alt?: string;
@@ -217,80 +217,88 @@ Additionally, I continuously work on new features, reusable components, performa
     media: [],
     link: "https://ondishfoods.pt/",
   },
-  {
-    id: "prodia",
-    type: "personal",
-    company: "Prodia",
-    role: {
-      pt: "Full Stack Developer (Projeto Pessoal)",
-      en: "Full Stack Developer (Personal Project)",
-    },
-    period: { start: "2026-05", end: null },
-    shortDescription: {
-      pt: "Plataforma em desenvolvimento para geração de imagens e vídeos de produtos com IA, com automação de catálogo e sistema de créditos.",
-      en: "In-progress AI platform for generating product images and videos, with catalog automation and credit-based system.",
-    },
-    fullDescription: {
-      pt: `Estou desenvolvendo o Prodia como um projeto pessoal focado na criação de conteúdo visual para produtos utilizando inteligência artificial.
-
-A plataforma permite transformar fotos simples em imagens profissionais e vídeos prontos para e-commerce e marketing.
-
-Principais pontos do projeto:
-
-- Geração de imagens e vídeos com IA
-- Sistema de créditos e planos com Stripe
-- Módulo de catálogo com edição visual de produtos
-- Suporte a contas multiusuário (enterprise)
-- Arquitetura escalável com separação de frontend, backend e serviços de IA
-
-O projeto demonstra minha capacidade de estruturar e desenvolver um produto completo, incluindo lógica de negócio, monetização e experiência do usuário.`,
-
-      en: `I am developing Prodia as a personal project focused on AI-powered visual content generation for products.
-
-The platform allows users to transform simple product photos into professional images and videos for e-commerce and marketing.
-
-Key aspects of the project:
-
-- AI-powered image and video generation
-- Credit-based system and subscription plans with Stripe
-- Catalog module with visual product editing
-- Multi-user (enterprise) support
-- Scalable architecture with separated frontend, backend, and AI services
-
-This project demonstrates my ability to design and build a complete product, including business logic, monetization, and user experience.`,
-    },
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Supabase",
-      "Stripe",
-      "Fal.ai",
-      "AI Integrations",
-    ],
-    media: [
-      {
-        type: "video",
-        src: "/media/projects/prodia_v1.mp4",
-        alt: "Prodia video 1",
-      },
-      {
-        type: "video",
-        src: "/media/projects/prodia_v2.mp4",
-        alt: "Prodia video 2",
-      },
-      {
-        type: "video",
-        src: "/media/projects/prodia_v3.mp4",
-        alt: "Prodia video 3",
-      },
-      {
-        type: "video",
-        src: "/media/projects/prodia_v4.mp4",
-        alt: "Prodia video 4",
-      },
-    ],
+{
+  id: "prodia",
+  type: "personal",
+  company: "Prodia",
+  role: {
+    pt: "Full Stack Developer (Projeto Pessoal)",
+    en: "Full Stack Developer (Personal Project)",
   },
+  period: { start: "2026-05", end: "2026-07" },
+
+  shortDescription: {
+    pt: "Plataforma de geração de imagens e vídeos para produtos utilizando Inteligência Artificial, desenvolvida para e-commerce e marketing digital.",
+    en: "AI-powered platform for generating product images and videos for e-commerce and digital marketing.",
+  },
+
+  overview: {
+    pt: `O Prodia é uma plataforma desenvolvida para automatizar a criação de conteúdo visual para produtos utilizando Inteligência Artificial. A solução permite transformar imagens comuns em fotos profissionais e gerar vídeos prontos para utilização em e-commerce, marketplaces e campanhas de marketing.`,
+
+    en: `Prodia is a platform built to automate visual content creation for products using Artificial Intelligence. It transforms ordinary product images into professional photos and generates ready-to-use videos for e-commerce, marketplaces, and marketing campaigns.`,
+  },
+
+  fullDescription: {
+    pt: `Desenvolvi o Prodia como um projeto completo, participando desde a arquitetura da aplicação até a implementação das funcionalidades, integrações e experiência do usuário.
+
+Entre as principais funcionalidades desenvolvidas estão:
+
+- Geração de imagens utilizando Inteligência Artificial
+- Geração automática de vídeos para produtos
+- Sistema de créditos e assinaturas integrado ao Stripe
+- Catálogo de produtos com edição visual
+- Suporte a contas Enterprise com múltiplos usuários
+- Arquitetura escalável separando frontend, backend e serviços de IA
+
+O projeto demonstra minha experiência no desenvolvimento de produtos SaaS, integração com serviços de Inteligência Artificial, implementação de sistemas de monetização e construção de aplicações escaláveis.`,
+
+    en: `I developed Prodia as a complete product, participating from the application architecture to feature implementation, integrations, and user experience.
+
+Main features include:
+
+- AI-powered image generation
+- Automated product video generation
+- Credit and subscription system integrated with Stripe
+- Product catalog with visual editing
+- Enterprise multi-user support
+- Scalable architecture separating frontend, backend, and AI services
+
+The project showcases my experience building SaaS products, integrating AI services, implementing monetization systems, and developing scalable applications.`,
+  },
+
+  technologies: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Supabase",
+    "Stripe",
+    "Fal.ai",
+    "AI Integrations",
+  ],
+
+  media: [
+    {
+      type: "video",
+      src: "/media/projects/prodia_v1.mp4",
+      alt: "Prodia video 1",
+    },
+    {
+      type: "video",
+      src: "/media/projects/prodia_v2.mp4",
+      alt: "Prodia video 2",
+    },
+    {
+      type: "video",
+      src: "/media/projects/prodia_v3.mp4",
+      alt: "Prodia video 3",
+    },
+    {
+      type: "video",
+      src: "/media/projects/prodia_v4.mp4",
+      alt: "Prodia video 4",
+    },
+  ],
+},
 
   {
     id: "criarch",
