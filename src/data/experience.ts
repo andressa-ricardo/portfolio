@@ -146,6 +146,7 @@ Main features include:
       "i18n",
     ],
     media: [],
+    link: "https://agendamentolivre.maoslivres.com/",
   },
   {
     id: "ondish-foods",
@@ -217,29 +218,29 @@ Additionally, I continuously work on new features, reusable components, performa
     media: [],
     link: "https://ondishfoods.pt/",
   },
-{
-  id: "prodia",
-  type: "personal",
-  company: "Prodia",
-  role: {
-    pt: "Full Stack Developer (Projeto Pessoal)",
-    en: "Full Stack Developer (Personal Project)",
-  },
-  period: { start: "2026-05", end: "2026-07" },
+  {
+    id: "prodia",
+    type: "personal",
+    company: "Prodia",
+    role: {
+      pt: "Full Stack Developer (Projeto Pessoal)",
+      en: "Full Stack Developer (Personal Project)",
+    },
+    period: { start: "2026-05", end: "2026-07" },
 
-  shortDescription: {
-    pt: "Plataforma de geração de imagens e vídeos para produtos utilizando Inteligência Artificial, desenvolvida para e-commerce e marketing digital.",
-    en: "AI-powered platform for generating product images and videos for e-commerce and digital marketing.",
-  },
+    shortDescription: {
+      pt: "Plataforma de geração de imagens e vídeos para produtos utilizando Inteligência Artificial, desenvolvida para e-commerce e marketing digital.",
+      en: "AI-powered platform for generating product images and videos for e-commerce and digital marketing.",
+    },
 
-  overview: {
-    pt: `O Prodia é uma plataforma desenvolvida para automatizar a criação de conteúdo visual para produtos utilizando Inteligência Artificial. A solução permite transformar imagens comuns em fotos profissionais e gerar vídeos prontos para utilização em e-commerce, marketplaces e campanhas de marketing.`,
+    overview: {
+      pt: `O Prodia é uma plataforma desenvolvida para automatizar a criação de conteúdo visual para produtos utilizando Inteligência Artificial. A solução permite transformar imagens comuns em fotos profissionais e gerar vídeos prontos para utilização em e-commerce, marketplaces e campanhas de marketing.`,
 
-    en: `Prodia is a platform built to automate visual content creation for products using Artificial Intelligence. It transforms ordinary product images into professional photos and generates ready-to-use videos for e-commerce, marketplaces, and marketing campaigns.`,
-  },
+      en: `Prodia is a platform built to automate visual content creation for products using Artificial Intelligence. It transforms ordinary product images into professional photos and generates ready-to-use videos for e-commerce, marketplaces, and marketing campaigns.`,
+    },
 
-  fullDescription: {
-    pt: `Desenvolvi o Prodia como um projeto completo, participando desde a arquitetura da aplicação até a implementação das funcionalidades, integrações e experiência do usuário.
+    fullDescription: {
+      pt: `Desenvolvi o Prodia como um projeto completo, participando desde a arquitetura da aplicação até a implementação das funcionalidades, integrações e experiência do usuário.
 
 Entre as principais funcionalidades desenvolvidas estão:
 
@@ -252,7 +253,7 @@ Entre as principais funcionalidades desenvolvidas estão:
 
 O projeto demonstra minha experiência no desenvolvimento de produtos SaaS, integração com serviços de Inteligência Artificial, implementação de sistemas de monetização e construção de aplicações escaláveis.`,
 
-    en: `I developed Prodia as a complete product, participating from the application architecture to feature implementation, integrations, and user experience.
+      en: `I developed Prodia as a complete product, participating from the application architecture to feature implementation, integrations, and user experience.
 
 Main features include:
 
@@ -264,41 +265,41 @@ Main features include:
 - Scalable architecture separating frontend, backend, and AI services
 
 The project showcases my experience building SaaS products, integrating AI services, implementing monetization systems, and developing scalable applications.`,
+    },
+
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "Stripe",
+      "Fal.ai",
+      "AI Integrations",
+    ],
+
+    media: [
+      {
+        type: "video",
+        src: "/media/projects/prodia_v1.mp4",
+        alt: "Prodia video 1",
+      },
+      {
+        type: "video",
+        src: "/media/projects/prodia_v2.mp4",
+        alt: "Prodia video 2",
+      },
+      {
+        type: "video",
+        src: "/media/projects/prodia_v3.mp4",
+        alt: "Prodia video 3",
+      },
+      {
+        type: "video",
+        src: "/media/projects/prodia_v4.mp4",
+        alt: "Prodia video 4",
+      },
+    ],
   },
-
-  technologies: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Supabase",
-    "Stripe",
-    "Fal.ai",
-    "AI Integrations",
-  ],
-
-  media: [
-    {
-      type: "video",
-      src: "/media/projects/prodia_v1.mp4",
-      alt: "Prodia video 1",
-    },
-    {
-      type: "video",
-      src: "/media/projects/prodia_v2.mp4",
-      alt: "Prodia video 2",
-    },
-    {
-      type: "video",
-      src: "/media/projects/prodia_v3.mp4",
-      alt: "Prodia video 3",
-    },
-    {
-      type: "video",
-      src: "/media/projects/prodia_v4.mp4",
-      alt: "Prodia video 4",
-    },
-  ],
-},
 
   {
     id: "criarch",
@@ -598,4 +599,3 @@ The work was done using Node.js, Python, and TypeScript, with a focus on stabili
     media: [],
   },
 ];
-
