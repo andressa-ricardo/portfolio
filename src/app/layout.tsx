@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
 import { Header } from "@/components/header";
@@ -7,20 +6,10 @@ import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "Andressa | Portfolio",
   description:
-    "Desenvolvedora Frontend — Portfolio profissional. React, Next.js, TypeScript.",
+    "Desenvolvedora Frontend - Portfolio profissional. React, Next.js, TypeScript.",
   keywords: [
     "frontend developer",
     "react",
@@ -33,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Andressa | Portfolio",
     description:
-      "Desenvolvedora Frontend — Portfolio profissional. React, Next.js, TypeScript.",
+      "Desenvolvedora Frontend - Portfolio profissional. React, Next.js, TypeScript.",
     type: "website",
     locale: "pt_BR",
     alternateLocale: "en_US",
@@ -42,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Andressa | Portfolio",
     description:
-      "Desenvolvedora Frontend — Portfolio profissional. React, Next.js, TypeScript.",
+      "Desenvolvedora Frontend - Portfolio profissional. React, Next.js, TypeScript.",
   },
   robots: {
     index: true,
@@ -77,9 +66,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
-      >
+      <body className="font-sans antialiased">
         <ThemeProvider>
           <LanguageProvider>
             <ScrollProgress />

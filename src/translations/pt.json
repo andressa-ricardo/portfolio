@@ -16,7 +16,7 @@
     "greeting": "Olá, eu sou",
     "name": "Andressa",
     "role": "Desenvolvedora Fullstack",
-  "description": "Criando soluções digitais modernas com foco em qualidade, eficiência e experiências intuitivas que conectam pessoas e tecnologia.",
+    "description": "Criando soluções digitais modernas com foco em qualidade, eficiência e experiências intuitivas que conectam pessoas e tecnologia.",
     "badge": "Disponível para novos projetos",
     "cta": "Entre em contato",
     "secondaryCta": "Ver experiência",
@@ -24,8 +24,8 @@
   },
   "about": {
     "title": "Sobre mim",
-     "p1": "Desenvolvedora de software com experiência em construção de aplicações web e mobile, utilizando React, Next.js, TypeScript e Node.js. Já atuei no desenvolvimento de plataformas completas, incluindo integrações com pagamentos, autenticação, IA e serviços em nuvem.",
-  "p2": "Tenho foco em criar soluções bem estruturadas, escaláveis e com boa experiência de uso, participando desde a concepção até a entrega do produto.",
+    "p1": "Desenvolvedora de software com experiência em construção de aplicações web e mobile, utilizando React, Next.js, TypeScript e Node.js. Já atuei no desenvolvimento de plataformas completas, incluindo integrações com pagamentos, autenticação, IA e serviços em nuvem.",
+    "p2": "Tenho foco em criar soluções bem estruturadas, escaláveis e com boa experiência de uso, participando desde a concepção até a entrega do produto.",
     "location": "Rio de Janeiro, Brasil",
     "available": "Disponível para projetos e trabalhos",
     "skillsTitle": "Habilidades",
@@ -84,7 +84,28 @@
   },
   "courses": {
     "title": "Cursos & Certificações",
-    "hours": "horas"
+    "hours": "horas",
+    "noHours": "sem carga",
+    "viewCertificates": "Ver certificados",
+    "openOnLinkedIn": "Abrir certificado no LinkedIn",
+    "modalSubtitle": "Selecione um curso para abrir o certificado no LinkedIn.",
+    "closeModal": "Fechar modal",
+    "courseLabel": "curso",
+    "courseLabelPlural": "cursos",
+    "categories": {
+      "aws": "AWS",
+      "java": "Java",
+      "n8n": "n8n",
+      "reactNative": "React Native",
+      "advpl": "ADVPL"
+    },
+    "descriptions": {
+      "aws": "Cursos focados em infraestrutura em nuvem, armazenamento, disponibilidade e escalabilidade na AWS.",
+      "java": "Cursos voltados a Java, orientação a objetos, streams e segurança com Spring Security.",
+      "n8n": "Cursos focados em automação de fluxos, integrações e construção de workflows inteligentes.",
+      "reactNative": "Cursos voltados ao desenvolvimento mobile com React Native e Expo.",
+      "advpl": "Cursos voltados ao ecossistema TOTVS Protheus e desenvolvimento com ADVPL."
+    }
   },
   "languages": {
     "title": "Idiomas",

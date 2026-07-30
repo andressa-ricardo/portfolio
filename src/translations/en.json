@@ -25,7 +25,7 @@
   "about": {
     "title": "About me",
     "p1": "Software developer with experience building web and mobile applications using React, Next.js, TypeScript, and Node.js. I have worked on end-to-end platforms, including integrations with payments, authentication, AI, and cloud services.",
-  "p2": "I focus on creating well-structured, scalable solutions with strong user experience, contributing from product conception to delivery.",
+    "p2": "I focus on creating well-structured, scalable solutions with strong user experience, contributing from product conception to delivery.",
     "location": "Rio de Janeiro, Brazil",
     "available": "Available for projects and jobs.",
     "skillsTitle": "Skills",
@@ -84,7 +84,28 @@
   },
   "courses": {
     "title": "Courses & Certifications",
-    "hours": "hours"
+    "hours": "hours",
+    "noHours": "no hours",
+    "viewCertificates": "View certificates",
+    "openOnLinkedIn": "Open certificate on LinkedIn",
+    "modalSubtitle": "Select a course to open its certificate on LinkedIn.",
+    "closeModal": "Close modal",
+    "courseLabel": "course",
+    "courseLabelPlural": "courses",
+    "categories": {
+      "aws": "AWS",
+      "java": "Java",
+      "n8n": "n8n",
+      "reactNative": "React Native",
+      "advpl": "ADVPL"
+    },
+    "descriptions": {
+      "aws": "Courses focused on cloud infrastructure, storage, availability, and scalability on AWS.",
+      "java": "Courses focused on Java, object-oriented programming, streams, and security with Spring Security.",
+      "n8n": "Courses focused on workflow automation, integrations, and intelligent process building.",
+      "reactNative": "Courses focused on mobile development with React Native and Expo.",
+      "advpl": "Courses focused on the TOTVS Protheus ecosystem and ADVPL development."
+    }
   },
   "languages": {
     "title": "Languages",
@@ -107,6 +128,6 @@
   },
   "meta": {
     "title": "Andressa | Portfolio",
-    "description": "Software Developer — Professional portfolio"
+    "description": "Software Developer - Professional portfolio"
   }
 }
