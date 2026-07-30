@@ -85,7 +85,7 @@
   "courses": {
     "title": "Courses & Certifications",
     "hours": "hours",
-    "noHours": "no hours",
+    "noHours": "Completed",
     "viewCertificates": "View certificates",
     "openOnLinkedIn": "Open certificate on LinkedIn",
     "modalSubtitle": "Select a course to open its certificate on LinkedIn.",

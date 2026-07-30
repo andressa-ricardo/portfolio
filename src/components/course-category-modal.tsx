@@ -103,7 +103,7 @@ export function CourseCategoryModal({ category, courses, onClose }: Props) {
                 {uniqueCourses.map((course, index) => {
                   const width = course.hours
                     ? `${(course.hours / maxHours) * 100}%`
-                    : "20%";
+                    : "100%";
 
                   return (
                     <motion.a
@@ -132,22 +132,27 @@ export function CourseCategoryModal({ category, courses, onClose }: Props) {
 
                       <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted">
                         <span>{course.issued[locale]}</span>
-                        {course.hours ? (
-                          <>
-                            <span className="h-1 w-1 rounded-full bg-border" />
-                            <span>{course.hours}h</span>
-                          </>
-                        ) : null}
+                        <span className="h-1 w-1 rounded-full bg-border" />
+                        <span>{course.hours ? `${course.hours}h` : t.courses.noHours}</span>
                       </div>
 
-                      <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-border">
-                        <motion.div
-                          className="h-full rounded-full bg-accent"
-                          initial={{ width: 0 }}
-                          animate={{ width }}
-                          transition={{ duration: 0.45, delay: 0.1 + index * 0.05 }}
-                        />
-                      </div>
+                      {course.hours ? (
+                        <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-border">
+                          <motion.div
+                            className="h-full rounded-full bg-accent"
+                            initial={{ width: 0 }}
+                            animate={{ width }}
+                            transition={{ duration: 0.45, delay: 0.1 + index * 0.05 }}
+                          />
+                        </div>
+                      ) : (
+                        <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M20 6 9 17l-5-5" />
+                          </svg>
+                          {t.courses.noHours}
+                        </div>
+                      )}
 
                       <p className="mt-3 text-sm font-medium text-accent">
                         {t.courses.openOnLinkedIn}

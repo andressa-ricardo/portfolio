@@ -135,7 +135,7 @@ export const courses: Course[] = [
     },
     category: "reactNative",
     institution: "Alura",
-    issued: { pt: "2025", en: "2025" },
+    issued: { pt: "set de 2025", en: "Sep 2025" },
     hours: 8,
     link: LINKEDIN_CERTIFICATIONS_URL,
   },
