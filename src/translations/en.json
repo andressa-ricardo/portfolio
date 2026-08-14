@@ -6,6 +6,7 @@
     "about": "About",
     "services": "Services",
     "experience": "Experience",
+    "projects": "Projects",
     "skills": "Skills",
     "education": "Education",
     "courses": "Courses",
@@ -68,6 +69,10 @@
     "gallery": "Gallery",
     "visitSite": "Visit site",
     "scrollHint": "Scroll to see more experiences"
+  },
+  "projects": {
+    "title": "Personal Projects",
+    "subtitle": "Independent products and initiatives where I was involved in conception, strategy, and technical execution."
   },
   "skills": {
     "title": "Technical Skills",

@@ -6,6 +6,7 @@
     "about": "Sobre",
     "services": "Serviços",
     "experience": "Experiência",
+    "projects": "Projetos",
     "skills": "Skills",
     "education": "Educação",
     "courses": "Cursos",
@@ -68,6 +69,10 @@
     "gallery": "Galeria",
     "visitSite": "Visitar site",
     "scrollHint": "Role para ver mais experiências"
+  },
+  "projects": {
+    "title": "Projetos Pessoais",
+    "subtitle": "Produtos e iniciativas autorais em que participei da concepção, estratégia e construção técnica."
   },
   "skills": {
     "title": "Skills Técnicas",

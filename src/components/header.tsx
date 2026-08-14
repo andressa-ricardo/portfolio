@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   "about",
   "services",
   "experience",
+  "projects",
   "skills",
   "education",
   "courses",
