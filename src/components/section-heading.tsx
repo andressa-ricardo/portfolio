@@ -17,7 +17,7 @@ export function SectionHeading({ children }: { children: React.ReactNode }) {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-        className="mt-2 block h-1 w-12 origin-left rounded-full bg-gradient-to-r from-accent to-violet-500"
+        className="mt-2 block h-1 w-12 origin-left rounded-full bg-gradient-to-r from-accent to-accent-hover"
       />
     </motion.h2>
   );

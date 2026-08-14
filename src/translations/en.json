@@ -33,15 +33,15 @@
   },
   "services": {
     "title": "What I do",
-    "subtitle": "From the interface to the backend: I build complete digital products, from frontend to automation, always focused on quality and results.",
+    "subtitle": "From websites, landing pages, and mobile apps to automation, I build digital products focused on quality, performance, and results.",
     "items": {
-      "frontend": {
-        "title": "Websites & Frontend",
-        "desc": "Modern, responsive, high-performance web interfaces with React, Next.js, and TypeScript."
+      "mobile": {
+        "title": "Mobile Apps",
+        "desc": "Mobile applications built with React Native and Expo, focused on performance, fluid navigation, and a strong user experience."
       },
-      "landing": {
-        "title": "Landing Pages",
-        "desc": "High-converting pages for products, launches, and lead generation."
+      "frontend": {
+        "title": "Websites, Frontend & Landing Pages",
+        "desc": "Institutional websites, web interfaces, and modern landing pages built with React, Next.js, and TypeScript."
       },
       "automation": {
         "title": "Automation",

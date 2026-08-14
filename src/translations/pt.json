@@ -33,15 +33,15 @@
   },
   "services": {
     "title": "O que eu faço",
-    "subtitle": "Da interface ao bastidor: construo produtos digitais completos, do frontend à automação, sempre com foco em qualidade e resultado.",
+    "subtitle": "De websites, landing pages e apps mobile à automação, construo produtos digitais com foco em qualidade, performance e resultado.",
     "items": {
-      "frontend": {
-        "title": "Websites & Frontend",
-        "desc": "Interfaces web modernas, responsivas e performáticas com React, Next.js e TypeScript."
+      "mobile": {
+        "title": "Apps Mobile",
+        "desc": "Aplicativos mobile com React Native e Expo, pensados para performance, navegação fluida e boa experiência de uso."
       },
-      "landing": {
-        "title": "Landing Pages",
-        "desc": "Páginas de alta conversão para produtos, lançamentos e captação de clientes."
+      "frontend": {
+        "title": "Websites, Frontend & Landing Pages",
+        "desc": "Sites institucionais, interfaces web e landing pages modernas, responsivas e performáticas com React, Next.js e TypeScript."
       },
       "automation": {
         "title": "Automação",

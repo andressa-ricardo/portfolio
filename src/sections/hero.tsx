@@ -81,7 +81,7 @@ export function Hero() {
 
         <motion.p
           variants={item}
-          className="mt-3 bg-gradient-to-r from-accent to-violet-500 bg-clip-text text-xl font-semibold leading-snug text-transparent sm:text-3xl"
+          className="mt-3 bg-gradient-to-r from-accent to-accent-hover bg-clip-text text-xl font-semibold leading-snug text-transparent sm:text-3xl"
         >
           {t.hero.role}
         </motion.p>

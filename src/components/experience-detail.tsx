@@ -20,7 +20,7 @@ const markdownComponents: Components = {
   ),
   li: ({ children }) => (
     <li className="flex gap-3 leading-7 text-muted">
-      <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-accent shadow-[0_0_0_4px_rgba(225,29,115,0.10)] dark:shadow-[0_0_0_4px_rgba(244,114,182,0.12)]" />
+      <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-accent shadow-[0_0_0_4px_rgba(124,58,237,0.12)] dark:shadow-[0_0_0_4px_rgba(167,139,250,0.16)]" />
       <span className="min-w-0">{children}</span>
     </li>
   ),
