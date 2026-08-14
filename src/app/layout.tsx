@@ -4,38 +4,57 @@ import { LanguageProvider } from "@/components/language-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { getBaseUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
+const baseUrl = getBaseUrl();
+
 export const metadata: Metadata = {
-  title: "Andressa | Portfolio",
-  description:
-    "Desenvolvedora Frontend - Portfolio profissional. React, Next.js, TypeScript.",
-  keywords: [
-    "frontend developer",
-    "react",
-    "next.js",
-    "typescript",
-    "portfolio",
-    "desenvolvedora frontend",
-  ],
-  authors: [{ name: "Andressa" }],
+  metadataBase: baseUrl,
+  title: siteConfig.title,
+  description: siteConfig.description,
+  applicationName: siteConfig.shortName,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.name, url: siteConfig.linkedIn }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Andressa | Portfolio",
-    description:
-      "Desenvolvedora Frontend - Portfolio profissional. React, Next.js, TypeScript.",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: "/",
+    siteName: siteConfig.shortName,
     type: "website",
     locale: "pt_BR",
     alternateLocale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} portfolio`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Andressa | Portfolio",
-    description:
-      "Desenvolvedora Frontend - Portfolio profissional. React, Next.js, TypeScript.",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: "/favicon.svg",
