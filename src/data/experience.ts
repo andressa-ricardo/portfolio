@@ -94,8 +94,8 @@ My responsibilities include:
     type: "personal",
     company: "Agendamento Livre",
     role: {
-      pt: "Lead Frontend Developer",
-      en: "Lead Frontend Developer",
+      pt: "Lead Full Stack Developer",
+      en: "Lead Full Stack Developer",
     },
     period: { start: "2026-07", end: null },
     shortDescription: {
@@ -107,7 +107,7 @@ My responsibilities include:
       en: `Agendamento Livre is a Mãos Livres product built to digitalize service businesses by providing online scheduling, customer management, staff management, and business insights in a single platform.`,
     },
     fullDescription: {
-      pt: `Sou responsável pelo desenvolvimento Front-end do produto desde sua concepção, participando da definição das funcionalidades, arquitetura da aplicação e implementação das interfaces.
+      pt: `Atuo no desenvolvimento full stack do produto desde sua concepção, participando da definição das funcionalidades, arquitetura da aplicação em Next.js e implementação tanto do frontend quanto do backend.
 
 Entre as funcionalidades desenvolvidas estão:
 
@@ -118,10 +118,11 @@ Entre as funcionalidades desenvolvidas estão:
 - Landing page institucional
 - Área administrativa
 - Componentes reutilizáveis
-- Internacionalização (i18n)
 - Interface responsiva
-- Integrações com notificações e automações`,
-      en: `I lead the Frontend development of the product from its initial conception, participating in feature definition, application architecture, and interface implementation.
+- Integrações com notificações e automações
+
+Como a arquitetura do produto é centralizada em Next.js, minha atuação envolve evoluir toda a aplicação, trabalhando nas interfaces, regras de negócio, fluxos internos e integrações necessárias para o funcionamento da plataforma.`,
+      en: `I work on the product as a full-stack developer from its initial conception, contributing to feature definition, the Next.js application architecture, and implementation across both frontend and backend.
 
 Main features include:
 
@@ -134,7 +135,9 @@ Main features include:
 - Reusable component library
 - Internationalization (i18n)
 - Responsive interfaces
-- Notification and automation integrations`,
+- Notification and automation integrations
+
+Because the product architecture is centered on Next.js, my role spans the full application, including interfaces, business logic, internal workflows, and the integrations required to keep the platform running.`,
     },
     technologies: [
       "React",
