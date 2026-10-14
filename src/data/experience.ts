@@ -36,6 +36,91 @@ export interface ExperienceEntry {
 
 export const experienceEntries: ExperienceEntry[] = [
   {
+    id: "mylio",
+    type: "personal",
+    company: "Mylio",
+    role: {
+      pt: "Founder & Full Stack Developer",
+      en: "Founder & Full Stack Developer",
+    },
+    period: { start: "2026-07", end: null },
+
+    shortDescription: {
+      pt: "Aplicativo mobile de organização pessoal que reúne tarefas, hábitos, metas, calendário e inteligência artificial em uma única experiência.",
+      en: "Personal organization mobile app that brings together tasks, habits, goals, calendar, and artificial intelligence in one experience.",
+    },
+
+    overview: {
+      pt: `O Mylio é um projeto pessoal de aplicativo mobile desenvolvido para centralizar diferentes áreas da vida em um único espaço. A proposta é ir além dos aplicativos tradicionais de produtividade, oferecendo uma experiência intuitiva e personalizada para organizar rotinas, acompanhar hábitos, planejar objetivos e registrar momentos importantes.
+
+O projeto também prevê a Daria, uma assistente de inteligência artificial capaz de ajudar os usuários a organizar suas atividades por meio de linguagem natural.`,
+
+      en: `Mylio is a personal mobile application project designed to bring different areas of everyday life into one place. The goal is to go beyond traditional productivity apps by offering an intuitive and personalized experience for organizing routines, tracking habits, planning goals, and keeping important information together.
+
+The project also includes plans for Daria, an AI assistant designed to help users organize their activities through natural language.`,
+    },
+
+    fullDescription: {
+      pt: `Idealizei o Mylio e sou responsável pelo desenvolvimento do produto, desde a experiência do usuário até a arquitetura das aplicações mobile e backend.
+
+O aplicativo está sendo desenvolvido com React Native e Expo, enquanto a API utiliza Java, Spring Boot e PostgreSQL.
+
+O projeto contempla módulos de tarefas, calendário, hábitos, metas, notas, lista de desejos, finanças pessoais e estatísticas, além da integração planejada com inteligência artificial.
+
+Minhas responsabilidades incluem:
+
+- Idealização e planejamento do produto
+- Desenvolvimento mobile com React Native e Expo
+- Arquitetura de componentes reutilizáveis
+- Desenvolvimento de APIs REST com Java e Spring Boot
+- Modelagem de dados e integração com PostgreSQL
+- Implementação de autenticação e segurança
+- Internacionalização (português e inglês)
+- Planejamento da integração com inteligência artificial
+- Desenvolvimento e evolução contínua da experiência do usuário`,
+
+      en: `I created Mylio and lead its development, from user experience to mobile and backend architecture.
+
+The mobile application is being built with React Native and Expo, while the backend uses Java, Spring Boot, and PostgreSQL.
+
+The project includes plans for task management, calendar, habit tracking, goals, notes, wishlists, personal finances, statistics, and AI-powered features.
+
+My responsibilities include:
+
+- Product ideation and planning
+- Mobile development with React Native and Expo
+- Reusable component architecture
+- REST API development with Java and Spring Boot
+- Database modeling and PostgreSQL integration
+- Authentication and security implementation
+- Internationalization (Portuguese and English)
+- AI integration planning
+- Continuous product and user experience development`,
+    },
+
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Java",
+      "Spring Boot",
+      "Spring Security",
+      "Spring Data JPA",
+      "PostgreSQL",
+      "Docker",
+      "NativeWind",
+      "i18next",
+    ],
+
+    media: [
+      {
+        type: "video",
+        src: "/media/projects/mylio.mp4",
+        alt: "Mylio video 1",
+      },
+    ],
+  },
+  {
     id: "maos-livres",
     type: "personal",
     company: "Mãos Livres",
@@ -152,8 +237,23 @@ Because the product architecture is centered on Next.js, my role spans the full 
       "PostgreSQL",
       "i18n",
     ],
-    media: [],
-    link: "https://agendamentolivre.maoslivres.com/",
+    media: [
+      {
+        type: "video",
+        src: "/media/projects/agendamento-1.mp4",
+        alt: "agendamento livre video 1",
+      },
+      {
+        type: "video",
+        src: "/media/projects/agendamento-2.mp4",
+        alt: "agendamento livre video 2",
+      },
+      {
+        type: "video",
+        src: "/media/projects/agendamento-3.mp4",
+        alt: "agendamento livre video 3",
+      },
+    ],
   },
   {
     id: "ondish-foods",
