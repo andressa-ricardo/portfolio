@@ -62,11 +62,8 @@ export function Projects() {
   };
 
   return (
-    <section
-      id="projects"
-      className="scroll-mt-20 border-t border-border py-12 sm:py-16 lg:py-20"
-    >
-      <div className="mb-8 flex items-center justify-between gap-4 border-b border-border pb-6">
+    <section id="projects" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
+      <div className="mb-8 flex items-center justify-between gap-4 pb-4">
         <p className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
           <span className="text-accent"></span> {t.projects.title}
         </p>
@@ -74,7 +71,7 @@ export function Projects() {
 
       <div className="grid gap-10 lg:h-[68svh] lg:min-h-[520px] lg:max-h-[720px] lg:grid-cols-[minmax(260px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
         <div
-          className="scrollbar-hidden border-l border-border pl-5 sm:pl-7 lg:h-full lg:overflow-y-auto lg:overscroll-contain lg:pr-3"
+          className="custom-scrollbar border-l border-border pl-5 sm:pl-7 lg:h-full lg:overflow-y-auto lg:overscroll-contain lg:pr-3"
           role="tablist"
           aria-orientation="vertical"
           tabIndex={0}
@@ -119,7 +116,7 @@ export function Projects() {
         </div>
 
         <div
-          className="scrollbar-hidden hidden min-w-0 lg:block lg:h-full lg:overflow-y-auto lg:overscroll-contain lg:pr-3"
+          className="custom-scrollbar hidden min-w-0 lg:block lg:h-full lg:overflow-y-auto lg:overscroll-contain lg:pr-3"
           tabIndex={0}
         >
           <AnimatePresence mode="wait">

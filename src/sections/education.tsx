@@ -29,11 +29,8 @@ export function Education() {
   const selected = education[selectedIndex] ?? education[0];
 
   return (
-    <section
-      id="education"
-      className="scroll-mt-20 border-t border-border py-12 sm:py-16 lg:py-20"
-    >
-      <div className="mb-8 flex items-center justify-between gap-4 border-b border-border pb-6">
+    <section id="education" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
+      <div className="mb-8 flex items-center justify-between gap-4 pb-4">
         <p className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
           <span className="text-accent"></span> {t.education.title}
         </p>

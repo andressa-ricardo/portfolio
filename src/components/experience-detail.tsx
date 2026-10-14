@@ -45,7 +45,7 @@ export function ExperienceDetail({ entry, onClose }: Props) {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: "100%" }}
         transition={{ type: "spring", damping: 30, stiffness: 300 }}
-        className="fixed bottom-0 right-0 top-0 z-91 w-full overflow-y-auto bg-background shadow-2xl sm:w-135 lg:w-150"
+        className="custom-scrollbar fixed bottom-0 right-0 top-0 z-91 w-full overflow-y-auto bg-background shadow-2xl sm:w-135 lg:w-150"
       >
         <div className="p-5 sm:p-8">
           {/* Close */}
