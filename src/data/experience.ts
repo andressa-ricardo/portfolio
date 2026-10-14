@@ -28,6 +28,10 @@ export interface ExperienceEntry {
   technologies: string[];
   media: MediaItem[];
   link?: string;
+  storeLinks?: {
+    apple?: string;
+    android?: string;
+  };
 }
 
 export const experienceEntries: ExperienceEntry[] = [
@@ -220,6 +224,11 @@ Additionally, I continuously work on new features, reusable components, performa
     ],
     media: [],
     link: "https://ondishfoods.pt/",
+    storeLinks: {
+      apple: "https://apps.apple.com/pt/app/ondishfoods/id6754709634",
+      android:
+        "https://play.google.com/store/apps/details?id=com.ondishfoods.ondishfoodapp",
+    },
   },
   {
     id: "prodia",
@@ -326,7 +335,7 @@ A plataforma cobre todo o fluxo criativo de um escritório de arquitetura: rende
 The platform covers the entire creative workflow of an architecture studio: realistic renders powered by diffusion models (with lighting presets and multiple aspect ratios), videos with professional camera movements (push in, travelling, drone shot, orbit), and a Studio with quick editing tools such as sky replacement, room decoration, and image upscaling.`,
     },
     fullDescription: {
-      pt: `Atuo no desenvolvimento full stack da plataforma, sendo responsável pela arquitetura e implementação de funcionalidades voltadas à geração de conteúdo com IA.
+      pt: `Atuei no desenvolvimento full stack da plataforma, sendo responsável pela arquitetura e implementação de funcionalidades voltadas à geração de conteúdo com IA.
 
 Desenvolvi fluxos completos para criação de imagens, vídeos e composições finais, utilizando pipelines assíncronos com processamento em etapas (render, vídeo e concatenação).
 
@@ -338,12 +347,12 @@ A plataforma inclui:
 - Armazenamento e gerenciamento de mídia
 - Painel administrativo com controle de features, planos e prompts de IA
 
-Utilizo Convex no backend para gerenciamento de dados, autenticação e lógica serverless em tempo real.
+Utilizei Convex no backend para gerenciamento de dados, autenticação e lógica serverless em tempo real.
 
 Também participei da modelagem de banco de dados e definição da arquitetura para suportar escalabilidade e evolução contínua do produto.
 
-Meu trabalho envolve tanto backend (APIs, integrações, lógica de processamento) quanto frontend (React), criando interfaces intuitivas para fluxos complexos de geração de conteúdo.`,
-      en: `I work on the full stack development of the platform, being responsible for designing and implementing features focused on AI content generation.
+Meu trabalho envolveu tanto backend (APIs, integrações, lógica de processamento) quanto frontend (React), criando interfaces intuitivas para fluxos complexos de geração de conteúdo.`,
+      en: `I worked on the full stack development of the platform, where I was responsible for designing and implementing features focused on AI content generation.
 
 I built complete workflows for generating images, videos, and final compositions using asynchronous pipelines with multi-step processing (render, video, and concatenation).
 
@@ -355,11 +364,11 @@ The platform includes:
 - Media storage and management
 - Admin dashboard for feature control, plans, and AI prompt management
 
-I use Convex as the backend for real-time data management, authentication, and serverless logic.
+I used Convex as the backend for real-time data management, authentication, and serverless logic.
 
 I also contributed to database modeling and system architecture to support scalability and continuous product evolution.
 
-My work spans both backend (APIs, integrations, processing logic) and frontend (React), building intuitive interfaces for complex content generation workflows.`,
+My work spanned both backend (APIs, integrations, processing logic) and frontend (React), building intuitive interfaces for complex content generation workflows.`,
     },
     technologies: [
       "React",

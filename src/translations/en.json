@@ -111,6 +111,8 @@
   },
   "experience": {
     "title": "Experience",
+    "timelineIntro": "From automation to interfaces. A journey of building, learning, and connection.",
+    "filterLabel": "Filter experiences",
     "present": "Present",
     "overview": "About the project",
     "contribution": "My role",
@@ -123,6 +125,7 @@
     "technologies": "Technologies",
     "gallery": "Gallery",
     "visitSite": "Visit site",
+    "downloadApp": "Download the app",
     "scrollHint": "Scroll to see more experiences"
   },
   "projects": {

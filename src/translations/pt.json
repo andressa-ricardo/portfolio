@@ -111,6 +111,8 @@
   },
   "experience": {
     "title": "Experiência",
+    "timelineIntro": "Da automação às interfaces. Uma trajetória de construção, aprendizado e conexões.",
+    "filterLabel": "Filtrar experiências",
     "present": "Atual",
     "overview": "Sobre o projeto",
     "contribution": "Minha atuação",
@@ -123,6 +125,7 @@
     "technologies": "Tecnologias",
     "gallery": "Galeria",
     "visitSite": "Visitar site",
+    "downloadApp": "Baixar o aplicativo",
     "scrollHint": "Role para ver mais experiências"
   },
   "projects": {

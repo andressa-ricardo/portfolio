@@ -12,12 +12,8 @@ interface Props {
 }
 
 const markdownComponents: Components = {
-  p: ({ children }) => (
-    <p className="leading-8 text-muted">{children}</p>
-  ),
-  ul: ({ children }) => (
-    <ul className="my-5 space-y-2.5 pl-1">{children}</ul>
-  ),
+  p: ({ children }) => <p className="leading-8 text-muted">{children}</p>,
+  ul: ({ children }) => <ul className="my-5 space-y-2.5 pl-1">{children}</ul>,
   li: ({ children }) => (
     <li className="flex gap-3 leading-7 text-muted">
       <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-accent shadow-[0_0_0_4px_rgba(124,58,237,0.12)] dark:shadow-[0_0_0_4px_rgba(167,139,250,0.16)]" />
@@ -58,8 +54,18 @@ export function ExperienceDetail({ entry, onClose }: Props) {
             className="mb-6 flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-accent/10"
             aria-label="Fechar"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
             </svg>
           </button>
 
@@ -77,7 +83,12 @@ export function ExperienceDetail({ entry, onClose }: Props) {
               {entry.role[locale]}
             </h3>
             <p className="mt-1 text-sm text-muted">
-              {formatPeriod(entry.period.start, entry.period.end, locale, t.experience.present)}
+              {formatPeriod(
+                entry.period.start,
+                entry.period.end,
+                locale,
+                t.experience.present,
+              )}
             </p>
           </div>
 
@@ -140,10 +151,50 @@ export function ExperienceDetail({ entry, onClose }: Props) {
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               >
                 {t.experience.visitSite}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M7 7h10v10" /><path d="M7 17 17 7" />
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
                 </svg>
               </a>
+            </div>
+          )}
+
+          {entry.storeLinks && (
+            <div className="mb-8">
+              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
+                {t.experience.downloadApp}
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                {entry.storeLinks.apple && (
+                  <a
+                    href={entry.storeLinks.apple}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-accent hover:text-white"
+                  >
+                    App Store <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+                {entry.storeLinks.android && (
+                  <a
+                    href={entry.storeLinks.android}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-accent hover:text-white"
+                  >
+                    Google Play <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
             </div>
           )}
 
@@ -162,7 +213,12 @@ export function ExperienceDetail({ entry, onClose }: Props) {
   );
 }
 
-function formatPeriod(start: string, end: string | null, locale: string, presentLabel: string) {
+function formatPeriod(
+  start: string,
+  end: string | null,
+  locale: string,
+  presentLabel: string,
+) {
   const fmt = (d: string) => {
     const date = new Date(d.length === 7 ? d + "-01" : d + "-01-01");
     return date.toLocaleDateString(locale === "pt" ? "pt-BR" : "en-US", {
