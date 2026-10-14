@@ -114,7 +114,7 @@ body {
 
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: var(--accent) transparent;
+  scrollbar-color: var(--muted) transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -128,9 +128,9 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--muted);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-hover);
+  background: var(--foreground);
 }
