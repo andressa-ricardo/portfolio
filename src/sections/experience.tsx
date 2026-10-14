@@ -108,7 +108,7 @@ export function Experience() {
               role="tab"
               aria-selected={filter === key}
               onClick={() => selectFilter(key)}
-              className={`px-3 py-2 text-xs font-medium transition-colors ${
+              className={`rounded-full px-3 py-2 text-xs font-medium transition-colors ${
                 filter === key
                   ? "bg-accent text-white"
                   : "border border-border text-muted hover:border-accent/40 hover:text-foreground"
@@ -140,7 +140,7 @@ export function Experience() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.04 }}
                 onClick={() => selectEntry(entry)}
-                className={`relative w-full border-b border-border px-4 py-5 text-left transition-colors sm:px-5 ${
+                className={`relative mb-2 w-full rounded-xl border border-border px-4 py-5 text-left transition-colors sm:px-5 ${
                   active ? "bg-accent/10" : "hover:bg-foreground/[0.025]"
                 }`}
               >

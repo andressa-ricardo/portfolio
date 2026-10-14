@@ -92,7 +92,7 @@ export function Projects() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.04 }}
                 onClick={() => selectEntry(entry)}
-                className={`relative w-full border-b border-border px-4 py-5 text-left transition-colors sm:px-5 ${active ? "bg-accent/10" : "hover:bg-foreground/[0.025]"}`}
+                className={`relative mb-2 w-full rounded-xl border border-border px-4 py-5 text-left transition-colors sm:px-5 ${active ? "bg-accent/10" : "hover:bg-foreground/[0.025]"}`}
               >
                 {active && (
                   <span className="absolute -left-[29px] top-0 h-full w-px bg-accent sm:-left-[37px]" />

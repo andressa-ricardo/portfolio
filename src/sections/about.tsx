@@ -29,7 +29,7 @@ export function About() {
             width={640}
             height={640}
             sizes="(max-width: 1024px) 80vw, 380px"
-            className="h-auto w-full border border-border object-contain"
+            className="h-auto w-full rounded-2xl border border-border object-contain"
             priority
           />
         </motion.div>

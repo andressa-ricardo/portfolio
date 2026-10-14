@@ -4,12 +4,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/components/language-provider";
 import { CourseCategoryModal } from "@/components/course-category-modal";
-import { SectionHeading } from "@/components/section-heading";
-import {
-  courses,
-  type Course,
-  type CourseCategory,
-} from "@/data/resume";
+import { courses, type Course, type CourseCategory } from "@/data/resume";
 
 interface CategorySummary {
   category: CourseCategory;
@@ -23,13 +18,31 @@ function getCourseKey(course: Course) {
 
 const CATEGORY_ICONS: Record<CourseCategory, React.ReactNode> = {
   aws: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M4 15c0-3.5 2.5-6 6-6 1 0 1.96.2 2.8.6A5 5 0 0 1 22 12a4 4 0 0 1-4 4H8a4 4 0 0 1-4-1z" />
       <path d="M8 19c2 .9 6 1.3 9.5.2" />
     </svg>
   ),
   java: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M8 21h8" />
       <path d="M12 17v4" />
       <path d="M7 3h10v5a5 5 0 0 1-10 0z" />
@@ -37,7 +50,16 @@ const CATEGORY_ICONS: Record<CourseCategory, React.ReactNode> = {
     </svg>
   ),
   n8n: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <circle cx="6" cy="12" r="2" />
       <circle cx="18" cy="6" r="2" />
       <circle cx="18" cy="18" r="2" />
@@ -46,7 +68,16 @@ const CATEGORY_ICONS: Record<CourseCategory, React.ReactNode> = {
     </svg>
   ),
   reactNative: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <ellipse cx="12" cy="12" rx="10" ry="4.2" />
       <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)" />
       <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)" />
@@ -54,7 +85,16 @@ const CATEGORY_ICONS: Record<CourseCategory, React.ReactNode> = {
     </svg>
   ),
   advpl: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M4 5h16v14H4z" />
       <path d="M8 9h8" />
       <path d="M8 13h5" />
@@ -73,7 +113,9 @@ const EMPTY_GROUPS: Record<CourseCategory, Course[]> = {
 
 export function Courses() {
   const { t } = useTranslation();
-  const [activeCategory, setActiveCategory] = useState<CourseCategory | null>(null);
+  const [activeCategory, setActiveCategory] = useState<CourseCategory | null>(
+    null,
+  );
 
   const categories = useMemo<CategorySummary[]>(() => {
     const grouped = courses.reduce<Record<CourseCategory, Course[]>>(
@@ -105,8 +147,15 @@ export function Courses() {
   );
 
   return (
-    <section id="courses" className="scroll-mt-20 py-16 sm:py-24">
-      <SectionHeading>{t.courses.title}</SectionHeading>
+    <section
+      id="courses"
+      className="scroll-mt-20 border-t border-border py-12 sm:py-16 lg:py-20"
+    >
+      <div className="mb-8 border-b border-border pb-6">
+        <h2 className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
+          <span className="text-accent"></span> {t.courses.title}
+        </h2>
+      </div>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {categories.map(({ category, items, totalHours }, i) => (
@@ -132,7 +181,10 @@ export function Courses() {
                       {t.courses.categories[category]}
                     </h3>
                     <p className="mt-1 text-sm text-muted">
-                      {items.length} {items.length === 1 ? t.courses.courseLabel : t.courses.courseLabelPlural}
+                      {items.length}{" "}
+                      {items.length === 1
+                        ? t.courses.courseLabel
+                        : t.courses.courseLabelPlural}
                     </p>
                   </div>
 
@@ -147,7 +199,17 @@ export function Courses() {
 
                 <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent">
                   {t.courses.viewCertificates}
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-0.5">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform group-hover:translate-x-0.5"
+                  >
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
                   </svg>

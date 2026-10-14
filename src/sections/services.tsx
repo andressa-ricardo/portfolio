@@ -101,7 +101,7 @@ export function Services() {
         </p>
       </div>
 
-      <div className="grid border-l border-t border-border sm:grid-cols-2">
+      <div className="grid overflow-hidden rounded-2xl border-l border-t border-border sm:grid-cols-2">
         {SERVICE_IDS.map((id, index) => {
           const item = t.services.items[id];
           return (
