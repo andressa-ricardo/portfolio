@@ -208,8 +208,23 @@
     "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub",
+    "medium": "Medium",
     "copyEmail": "Copy email",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "formEyebrow": "Direct message",
+    "formTitle": "Send me a message",
+    "name": "Name",
+    "senderEmail": "Your email",
+    "subject": "Subject",
+    "message": "Message",
+    "namePlaceholder": "What is your name?",
+    "emailPlaceholder": "you@email.com",
+    "subjectPlaceholder": "What would you like to talk about?",
+    "messagePlaceholder": "Tell me a little about your idea, project, or opportunity...",
+    "send": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent. I'll get back to you soon.",
+    "error": "It couldn't be sent right now. Please try again or use my email."
   },
   "footer": {
     "rights": "All rights reserved."

@@ -2,6 +2,7 @@
 
 import { useTranslation } from "@/components/language-provider";
 import { socials } from "@/data/resume";
+import { SiMedium } from "react-icons/si";
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   email: (
@@ -46,6 +47,7 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
       <circle cx="4" cy="4" r="2" />
     </svg>
   ),
+  medium: <SiMedium className="h-[17px] w-[17px]" aria-hidden="true" />,
 };
 
 export function Footer() {

@@ -223,7 +223,7 @@ export const languages: Language[] = [
 export interface Social {
   name: string;
   url: string;
-  icon: "github" | "linkedin" | "email";
+  icon: "github" | "linkedin" | "medium" | "email";
 }
 
 export const socials: Social[] = [
@@ -236,6 +236,11 @@ export const socials: Social[] = [
     name: "LinkedIn",
     url: "https://linkedin.com/in/andressa-ricardo",
     icon: "linkedin",
+  },
+  {
+    name: "Medium",
+    url: "https://medium.com/@andressaricardo30",
+    icon: "medium",
   },
   {
     name: "Email",
