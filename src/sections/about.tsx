@@ -24,7 +24,7 @@ export function About() {
           className="w-full max-w-[380px] justify-self-center"
         >
           <Image
-            src="/image.png"
+            src="/andressa_picture.jpeg"
             alt={t.about.photoAlt}
             width={640}
             height={640}
