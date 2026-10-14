@@ -37,7 +37,7 @@ export function SpacePage({
             href="/"
             aria-label={t.home.backHome}
             title={t.home.backHome}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-muted transition-all hover:border-accent hover:text-accent"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-muted transition-all hover:border-foreground/30 hover:bg-foreground/[0.04] hover:text-foreground"
           >
             <svg
               width="17"
@@ -52,7 +52,7 @@ export function SpacePage({
             </svg>
           </Link>
           <span className="font-mono text-[10px] text-accent">{number}</span>
-          <h1 className="text-2xl font-medium tracking-[-0.04em] text-foreground sm:text-4xl">
+          <h1 className="text-xl font-medium tracking-[-0.035em] text-foreground sm:text-3xl">
             {content.title}
             <span className="text-accent">.</span>
           </h1>

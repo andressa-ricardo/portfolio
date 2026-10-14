@@ -17,7 +17,7 @@ export function Languages() {
   return (
     <section id="languages" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
       <div className="mb-8 pb-4">
-        <h2 className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
+        <h2 className="text-base font-medium tracking-[-0.025em] text-foreground sm:text-lg">
           {t.languages.title}
         </h2>
       </div>
@@ -30,20 +30,20 @@ export function Languages() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="group rounded-2xl border border-border p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 sm:p-6"
+            className="group rounded-2xl border border-border p-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/25 hover:bg-foreground/[0.02] sm:p-6"
           >
             {/* Flag */}
-            <span className="inline-block text-4xl transition-transform duration-300 group-hover:scale-110">
+            <span className="inline-block text-3xl transition-transform duration-300 group-hover:scale-105">
               {lang.flag}
             </span>
 
             {/* Name */}
-            <h3 className="mt-3 text-base font-semibold text-foreground">
+            <h3 className="mt-3 text-sm font-medium text-foreground">
               {lang.name[locale]}
             </h3>
 
             {/* Level label */}
-            <p className="mt-1 text-sm font-medium text-accent">
+            <p className="mt-1 font-mono text-[10px] text-muted">
               {t.languages[lang.level]}
             </p>
 
@@ -65,7 +65,7 @@ export function Languages() {
                   cy="32"
                   r="26"
                   fill="none"
-                  stroke="var(--accent)"
+                  stroke="var(--muted)"
                   strokeWidth="5"
                   strokeLinecap="round"
                   strokeDasharray={2 * Math.PI * 26}

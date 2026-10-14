@@ -54,7 +54,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/70">
       <div className="mx-auto flex min-h-[72px] w-full max-w-[1728px] flex-col items-center justify-between gap-3 px-5 py-4 sm:flex-row sm:px-8 lg:px-12">
-        <p className="text-[10px] uppercase tracking-[0.06em] text-muted">
+        <p className="font-mono text-[9px] uppercase tracking-[0.06em] text-muted">
           © {new Date().getFullYear()} {t.header.name}
         </p>
 
@@ -66,7 +66,7 @@ export function Footer() {
               target={social.icon === "email" ? undefined : "_blank"}
               rel={social.icon === "email" ? undefined : "noopener noreferrer"}
               aria-label={social.name}
-              className="text-muted transition-colors hover:text-accent"
+              className="text-muted transition-colors hover:text-foreground"
             >
               {SOCIAL_ICONS[social.icon]}
             </a>

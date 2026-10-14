@@ -12,11 +12,13 @@ interface Props {
 }
 
 const markdownComponents: Components = {
-  p: ({ children }) => <p className="leading-8 text-muted">{children}</p>,
+  p: ({ children }) => (
+    <p className="font-mono text-xs leading-6 text-muted">{children}</p>
+  ),
   ul: ({ children }) => <ul className="my-5 space-y-2.5 pl-1">{children}</ul>,
   li: ({ children }) => (
-    <li className="flex gap-3 leading-7 text-muted">
-      <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-accent shadow-[0_0_0_4px_rgba(124,58,237,0.12)] dark:shadow-[0_0_0_4px_rgba(167,139,250,0.16)]" />
+    <li className="flex gap-3 font-mono text-xs leading-6 text-muted">
+      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/35" />
       <span className="min-w-0">{children}</span>
     </li>
   ),
@@ -51,7 +53,7 @@ export function ExperienceDetail({ entry, onClose }: Props) {
           {/* Close */}
           <button
             onClick={onClose}
-            className="mb-6 flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-accent/10"
+            className="mb-6 flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-foreground/[0.05]"
             aria-label="Fechar"
           >
             <svg
@@ -72,17 +74,19 @@ export function ExperienceDetail({ entry, onClose }: Props) {
           {/* Header */}
           <div className="mb-6">
             <div className="flex items-center gap-2">
-              <p className="text-sm font-medium text-accent">{entry.company}</p>
+              <p className="font-mono text-[10px] font-medium text-muted">
+                {entry.company}
+              </p>
               <span
                 className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold ${TYPE_BADGE[entry.type]}`}
               >
                 {t.experience.types[entry.type]}
               </span>
             </div>
-            <h3 className="mt-1 text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+            <h3 className="mt-2 text-lg font-medium tracking-tight text-foreground sm:text-xl">
               {entry.role[locale]}
             </h3>
-            <p className="mt-1 text-sm text-muted">
+            <p className="mt-1 font-mono text-[10px] text-muted">
               {formatPeriod(
                 entry.period.start,
                 entry.period.end,
@@ -95,10 +99,10 @@ export function ExperienceDetail({ entry, onClose }: Props) {
           {/* Overview — what the project is */}
           {entry.overview && (
             <div className="mb-6">
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
+              <h4 className="mb-3 font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
                 {t.experience.overview}
               </h4>
-              <div className="rounded-2xl border border-border/70 bg-foreground/1.5 p-5 text-base shadow-sm dark:bg-white/2.5 sm:p-6">
+              <div className="rounded-2xl border border-border/70 bg-foreground/[0.015] p-5 sm:p-6">
                 <div className="space-y-4">
                   <ReactMarkdown components={markdownComponents}>
                     {entry.overview[locale]}
@@ -111,11 +115,11 @@ export function ExperienceDetail({ entry, onClose }: Props) {
           {/* Description — my work on it */}
           <div className="mb-8">
             {entry.overview && (
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
+              <h4 className="mb-3 font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
                 {t.experience.contribution}
               </h4>
             )}
-            <div className="rounded-2xl border border-border/70 bg-foreground/1.5 p-5 text-base shadow-sm dark:bg-white/2.5 sm:p-6">
+            <div className="rounded-2xl border border-border/70 bg-foreground/[0.015] p-5 sm:p-6">
               <div className="space-y-4">
                 <ReactMarkdown components={markdownComponents}>
                   {entry.fullDescription[locale]}
@@ -126,14 +130,14 @@ export function ExperienceDetail({ entry, onClose }: Props) {
 
           {/* Technologies */}
           <div className="mb-8">
-            <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h4 className="mb-3 font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
               {t.experience.technologies}
             </h4>
             <div className="flex flex-wrap gap-2">
               {entry.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent"
+                  className="rounded-full border border-border px-3 py-1.5 font-mono text-[9px] text-muted"
                 >
                   {tech}
                 </span>
@@ -148,7 +152,7 @@ export function ExperienceDetail({ entry, onClose }: Props) {
                 href={entry.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 font-mono text-[10px] text-foreground transition-colors hover:border-foreground/30 hover:bg-foreground/[0.05]"
               >
                 {t.experience.visitSite}
                 <svg
@@ -170,7 +174,7 @@ export function ExperienceDetail({ entry, onClose }: Props) {
 
           {entry.storeLinks && (
             <div className="mb-8">
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
+              <h4 className="mb-3 font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
                 {t.experience.downloadApp}
               </h4>
               <div className="flex flex-wrap gap-3">
@@ -179,7 +183,7 @@ export function ExperienceDetail({ entry, onClose }: Props) {
                     href={entry.storeLinks.apple}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-accent hover:text-white"
+                    className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 font-mono text-[10px] text-foreground transition-colors hover:border-foreground/30 hover:bg-foreground/[0.05]"
                   >
                     App Store <span aria-hidden="true">↗</span>
                   </a>
@@ -189,7 +193,7 @@ export function ExperienceDetail({ entry, onClose }: Props) {
                     href={entry.storeLinks.android}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-accent/50 px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-accent hover:text-white"
+                    className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 font-mono text-[10px] text-foreground transition-colors hover:border-foreground/30 hover:bg-foreground/[0.05]"
                   >
                     Google Play <span aria-hidden="true">↗</span>
                   </a>
@@ -201,7 +205,7 @@ export function ExperienceDetail({ entry, onClose }: Props) {
           {/* Gallery */}
           {entry.media.length > 0 && (
             <div>
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
+              <h4 className="mb-3 font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
                 {t.experience.gallery}
               </h4>
               <MediaGallery items={entry.media} />

@@ -43,11 +43,11 @@ export function HomeHub() {
   return (
     <main className="home-grid relative mx-auto w-full max-w-[1728px] overflow-hidden px-5 py-8 sm:px-8 lg:px-12 lg:py-9">
       <div
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[55vw] max-h-[620px] w-[55vw] max-w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.035] blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[55vw] max-h-[620px] w-[55vw] max-w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground/[0.018] blur-3xl"
         aria-hidden="true"
       />
 
-      <div className="relative grid gap-4 sm:grid-cols-2 lg:h-full lg:grid-cols-[minmax(180px,1fr)_minmax(360px,1.6fr)_minmax(180px,1fr)] lg:grid-rows-3 lg:gap-x-8 lg:gap-y-4 lg:py-12 xl:grid-cols-[minmax(240px,1fr)_minmax(460px,1.6fr)_minmax(240px,1fr)] xl:gap-x-12">
+      <div className="relative mx-auto grid w-full max-w-[1380px] gap-4 sm:grid-cols-2 lg:h-full lg:grid-cols-[minmax(180px,1fr)_minmax(360px,1.5fr)_minmax(180px,1fr)] lg:grid-rows-3 lg:gap-x-7 lg:gap-y-4 lg:py-12 xl:grid-cols-[minmax(220px,1fr)_minmax(420px,1.5fr)_minmax(220px,1fr)] xl:gap-x-9">
         <div className="order-first col-span-full flex flex-col items-center justify-center py-7 text-center lg:col-span-1 lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:py-0">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -59,7 +59,7 @@ export function HomeHub() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.08 }}
-            className="text-[clamp(4rem,10vw,9.5rem)] font-light leading-[0.82] tracking-[-0.075em] text-foreground"
+            className="text-[clamp(3rem,6vw,5.75rem)] font-light leading-[0.88] tracking-[-0.065em] text-foreground"
           >
             Andressa
             <br />
@@ -69,7 +69,7 @@ export function HomeHub() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.22 }}
-            className="mt-7 max-w-md text-sm leading-relaxed text-muted sm:text-base"
+            className="mt-6 max-w-md font-mono text-[11px] leading-6 text-muted sm:text-xs"
           >
             {t.home.intro}
           </motion.p>
@@ -80,9 +80,9 @@ export function HomeHub() {
             className="mt-5 flex items-center gap-4 font-mono text-[9px] uppercase tracking-[0.08em] text-muted"
           >
             <span>Frontend</span>
-            <span className="text-accent">•</span>
+            <span className="text-foreground/30">•</span>
             <span>Mobile</span>
-            <span className="text-accent">•</span>
+            <span className="text-foreground/30">•</span>
             <span>Full stack</span>
           </motion.div>
         </div>
@@ -97,17 +97,17 @@ export function HomeHub() {
           >
             <Link
               href={href}
-              className="group flex min-h-24 items-center gap-4 rounded-2xl border border-border/70 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:bg-accent/[0.035] lg:min-h-0 lg:border-transparent lg:p-3"
+              className="group flex min-h-24 items-center gap-4 rounded-2xl border border-border/70 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-foreground/[0.025] lg:min-h-0 lg:border-transparent lg:p-3"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-white">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent transition-colors group-hover:bg-white" />
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-foreground/30 group-hover:bg-foreground/[0.05]">
+                <span className="h-1.5 w-1.5 rounded-full bg-foreground/35 transition-colors group-hover:bg-foreground/70" />
               </span>
               <span className="min-w-0">
-                <span className="mb-1 flex items-center gap-2 font-mono text-[9px] text-accent">
+                <span className="mb-1 flex items-center gap-2 font-mono text-[8px] text-muted">
                   {String(index + 1).padStart(2, "0")}
-                  <span className="h-px w-3 bg-border transition-all group-hover:w-7 group-hover:bg-accent" />
+                  <span className="h-px w-3 bg-border transition-all group-hover:w-7 group-hover:bg-foreground/30" />
                 </span>
-                <span className="block text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
+                <span className="block text-base font-medium tracking-[-0.025em] text-foreground sm:text-lg">
                   {t.home.items[key]}
                 </span>
               </span>
@@ -118,7 +118,7 @@ export function HomeHub() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.7"
-                className="ml-auto shrink-0 text-muted opacity-0 transition-all group-hover:translate-x-1 group-hover:text-accent group-hover:opacity-100"
+                className="ml-auto shrink-0 text-muted opacity-0 transition-all group-hover:translate-x-1 group-hover:text-foreground group-hover:opacity-100"
                 aria-hidden="true"
               >
                 <path d="M5 12h14M13 6l6 6-6 6" />

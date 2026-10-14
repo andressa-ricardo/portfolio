@@ -14,7 +14,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
+    <section id="about" className="scroll-mt-20 py-10 sm:py-14 lg:py-16">
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(260px,0.72fr)_minmax(0,1.28fr)] lg:gap-14 xl:gap-20">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -41,10 +41,10 @@ export function About() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="flex flex-col justify-center"
         >
-          <p className="mb-4 text-[10px] uppercase tracking-[0.08em] text-muted">
+          <p className="mb-3 font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
             {t.about.location}
           </p>
-          <div className="space-y-4 text-sm leading-7 text-muted sm:text-[15px]">
+          <div className="space-y-4 font-mono text-xs leading-6 text-muted">
             <p>{t.about.p1}</p>
             <p>{t.about.p2}</p>
           </div>
@@ -55,20 +55,24 @@ export function About() {
                 key={fact.label}
                 className="grid gap-2 border-b border-border py-4 sm:grid-cols-[130px_1fr] sm:items-center"
               >
-                <dt className="text-sm text-muted">{fact.label}</dt>
-                <dd className="text-sm font-semibold text-foreground sm:text-right">
+                <dt className="font-mono text-[11px] text-muted">
+                  {fact.label}
+                </dt>
+                <dd className="font-mono text-xs font-medium text-foreground sm:text-right">
                   {fact.value}
                 </dd>
               </div>
             ))}
             <div className="grid gap-2 border-b border-border py-4 sm:grid-cols-[130px_1fr] sm:items-center">
-              <dt className="text-sm text-muted">{t.about.facts.building}</dt>
+              <dt className="font-mono text-[11px] text-muted">
+                {t.about.facts.building}
+              </dt>
               <dd className="sm:text-right">
                 <a
                   href="https://www.maoslivres.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+                  className="inline-flex items-center gap-1 border-b border-border pb-0.5 font-mono text-xs font-medium text-foreground transition-colors hover:border-accent/50 hover:text-accent"
                 >
                   Mãos Livres <span aria-hidden="true">↗</span>
                 </a>

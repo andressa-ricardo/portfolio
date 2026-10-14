@@ -76,11 +76,13 @@ export function CourseCategoryModal({ category, courses, onClose }: Props) {
           >
             <div className="mb-6 flex items-start justify-between gap-4">
               <div>
-                <p className="text-sm font-medium text-accent">LinkedIn</p>
-                <h3 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                <p className="font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
+                  LinkedIn
+                </p>
+                <h3 className="mt-2 text-lg font-medium tracking-tight text-foreground sm:text-xl">
                   {t.courses.categories[category]}
                 </h3>
-                <p className="mt-2 text-sm text-muted">
+                <p className="mt-2 font-mono text-[10px] leading-5 text-muted">
                   {t.courses.modalSubtitle}
                 </p>
               </div>
@@ -88,10 +90,19 @@ export function CourseCategoryModal({ category, courses, onClose }: Props) {
               <button
                 type="button"
                 onClick={onClose}
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-accent/10"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-foreground/[0.05]"
                 aria-label={t.courses.closeModal}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M18 6 6 18" />
                   <path d="m6 6 12 12" />
                 </svg>
@@ -114,47 +125,75 @@ export function CourseCategoryModal({ category, courses, onClose }: Props) {
                       initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.25, delay: index * 0.05 }}
-                      className="group rounded-2xl border border-border/80 bg-foreground/2 p-4 transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10 dark:bg-white/2.5"
+                      className="group rounded-2xl border border-border/80 bg-foreground/[0.02] p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/25 dark:bg-white/[0.025]"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div>
-                          <h4 className="text-sm font-semibold leading-snug text-foreground sm:text-base">
+                          <h4 className="text-xs font-medium leading-5 text-foreground sm:text-sm">
                             {course.name[locale]}
                           </h4>
-                          <p className="mt-1 text-sm text-accent">{course.institution}</p>
+                          <p className="mt-1 font-mono text-[9px] text-muted">
+                            {course.institution}
+                          </p>
                         </div>
 
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0 text-muted transition-colors group-hover:text-accent">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="mt-0.5 shrink-0 text-muted transition-colors group-hover:text-foreground"
+                        >
                           <path d="M7 7h10v10" />
                           <path d="M7 17 17 7" />
                         </svg>
                       </div>
 
-                      <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted">
+                      <div className="mt-3 flex flex-wrap items-center gap-3 font-mono text-[9px] text-muted">
                         <span>{course.issued[locale]}</span>
                         <span className="h-1 w-1 rounded-full bg-border" />
-                        <span>{course.hours ? `${course.hours}h` : t.courses.noHours}</span>
+                        <span>
+                          {course.hours
+                            ? `${course.hours}h`
+                            : t.courses.noHours}
+                        </span>
                       </div>
 
                       {course.hours ? (
                         <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-border">
                           <motion.div
-                            className="h-full rounded-full bg-accent"
+                            className="h-full rounded-full bg-foreground/45"
                             initial={{ width: 0 }}
                             animate={{ width }}
-                            transition={{ duration: 0.45, delay: 0.1 + index * 0.05 }}
+                            transition={{
+                              duration: 0.45,
+                              delay: 0.1 + index * 0.05,
+                            }}
                           />
                         </div>
                       ) : (
-                        <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 font-mono text-[9px] text-muted">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
                             <path d="M20 6 9 17l-5-5" />
                           </svg>
                           {t.courses.noHours}
                         </div>
                       )}
 
-                      <p className="mt-3 text-sm font-medium text-accent">
+                      <p className="mt-3 font-mono text-[9px] text-foreground">
                         {t.courses.openOnLinkedIn}
                       </p>
                     </motion.a>

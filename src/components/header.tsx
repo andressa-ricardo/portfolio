@@ -46,7 +46,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="site-menu"
             aria-label={open ? t.home.closeMenu : t.home.openMenu}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent/50 hover:text-accent"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-foreground/30 hover:bg-foreground/[0.04]"
           >
             {open ? (
               <svg
@@ -88,9 +88,9 @@ export function Header() {
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className={`flex items-center gap-4 rounded-xl px-4 py-3 text-sm transition-colors hover:bg-accent/8 hover:text-accent ${pathname === href ? "text-accent" : "text-foreground"}`}
+                className={`flex items-center gap-4 rounded-xl px-4 py-3 font-mono text-xs transition-colors hover:bg-foreground/[0.04] ${pathname === href ? "bg-foreground/[0.04] text-foreground" : "text-muted hover:text-foreground"}`}
               >
-                <span className="font-mono text-[10px] text-accent">
+                <span className="font-mono text-[9px] text-muted">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 {t.home.items[key]}

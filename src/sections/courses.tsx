@@ -149,7 +149,7 @@ export function Courses() {
   return (
     <section id="courses" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
       <div className="mb-8 pb-4">
-        <h2 className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
+        <h2 className="text-base font-medium tracking-[-0.025em] text-foreground sm:text-lg">
           <span className="text-accent"></span> {t.courses.title}
         </h2>
       </div>
@@ -164,20 +164,20 @@ export function Courses() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
             onClick={() => setActiveCategory(category)}
-            className="group rounded-2xl border border-border p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 sm:p-6"
+            className="group rounded-2xl border border-border p-5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/25 hover:bg-foreground/[0.02] sm:p-6"
           >
             <div className="flex items-start gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border text-muted transition-colors duration-300 group-hover:text-foreground">
                 {CATEGORY_ICONS[category]}
               </div>
 
               <div className="min-w-0 flex-1">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">
+                    <h3 className="text-sm font-medium text-foreground">
                       {t.courses.categories[category]}
                     </h3>
-                    <p className="mt-1 text-sm text-muted">
+                    <p className="mt-1 font-mono text-[10px] text-muted">
                       {items.length}{" "}
                       {items.length === 1
                         ? t.courses.courseLabel
@@ -185,16 +185,16 @@ export function Courses() {
                     </p>
                   </div>
 
-                  <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
+                  <span className="rounded-full border border-border px-3 py-1 font-mono text-[9px] text-muted">
                     {totalHours > 0 ? `${totalHours}h` : t.courses.noHours}
                   </span>
                 </div>
 
-                <p className="mt-4 text-sm leading-relaxed text-muted">
+                <p className="mt-4 font-mono text-xs leading-6 text-muted">
                   {t.courses.descriptions[category]}
                 </p>
 
-                <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent">
+                <div className="mt-4 inline-flex items-center gap-2 font-mono text-[10px] text-foreground">
                   {t.courses.viewCertificates}
                   <svg
                     width="16"

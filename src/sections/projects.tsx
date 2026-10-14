@@ -10,11 +10,13 @@ import { experienceEntries, type ExperienceEntry } from "@/data/experience";
 import type { Locale } from "@/components/language-provider";
 
 const markdownComponents: Components = {
-  p: ({ children }) => <p className="leading-7 text-muted">{children}</p>,
+  p: ({ children }) => (
+    <p className="font-mono text-xs leading-6 text-muted">{children}</p>
+  ),
   ul: ({ children }) => <ul className="my-4 space-y-2">{children}</ul>,
   li: ({ children }) => (
-    <li className="flex gap-3 leading-7 text-muted">
-      <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+    <li className="flex gap-3 font-mono text-xs leading-6 text-muted">
+      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/35" />
       <span>{children}</span>
     </li>
   ),
@@ -64,7 +66,7 @@ export function Projects() {
   return (
     <section id="projects" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
       <div className="mb-8 flex items-center justify-between gap-4 pb-4">
-        <p className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
+        <p className="text-base font-medium tracking-[-0.025em] text-foreground sm:text-lg">
           <span className="text-accent"></span> {t.projects.title}
         </p>
       </div>
@@ -89,10 +91,10 @@ export function Projects() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.04 }}
                 onClick={() => selectEntry(entry)}
-                className={`relative mb-2 w-full rounded-xl border border-border px-4 py-5 text-left transition-colors sm:px-5 ${active ? "bg-accent/10" : "hover:bg-foreground/[0.025]"}`}
+                className={`relative mb-2 w-full rounded-xl border border-border px-4 py-5 text-left transition-colors sm:px-5 ${active ? "bg-foreground/[0.05]" : "hover:bg-foreground/[0.025]"}`}
               >
                 {active && (
-                  <span className="absolute -left-[29px] top-0 h-full w-px bg-accent sm:-left-[37px]" />
+                  <span className="absolute -left-[29px] top-0 h-full w-px bg-foreground/40 sm:-left-[37px]" />
                 )}
                 <time className="text-[11px] text-muted">
                   {formatPeriod(
@@ -102,9 +104,7 @@ export function Projects() {
                     t.experience.present,
                   )}
                 </time>
-                <h3
-                  className={`mt-3 text-lg font-medium tracking-[-0.025em] transition-colors ${active ? "text-accent" : "text-foreground"}`}
-                >
+                <h3 className="mt-3 text-base font-medium tracking-[-0.025em] text-foreground">
                   {entry.company}
                 </h3>
                 <p className="mt-2 text-xs leading-5 text-muted">
@@ -128,10 +128,10 @@ export function Projects() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                <h2 className="text-3xl font-medium tracking-[-0.04em] text-foreground sm:text-4xl">
+                <h2 className="text-xl font-medium tracking-[-0.03em] text-foreground sm:text-2xl">
                   {selected.company}
                 </h2>
-                <p className="mt-4 text-base font-semibold text-foreground">
+                <p className="mt-3 font-mono text-xs font-medium text-foreground">
                   {selected.role[locale]}
                 </p>
 
@@ -139,7 +139,7 @@ export function Projects() {
                   {selected.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="border-b border-accent/70 pb-1 text-xs text-muted"
+                      className="border-b border-accent/45 pb-1 font-mono text-[10px] text-muted"
                     >
                       {tech}
                     </span>
@@ -151,7 +151,7 @@ export function Projects() {
                     <h3 className="mb-3 text-[10px] uppercase tracking-[0.08em] text-muted">
                       {t.experience.overview}
                     </h3>
-                    <div className="space-y-4 text-sm">
+                    <div className="space-y-4">
                       <ReactMarkdown components={markdownComponents}>
                         {selected.overview[locale]}
                       </ReactMarkdown>
@@ -163,7 +163,7 @@ export function Projects() {
                   <h3 className="mb-3 text-[10px] uppercase tracking-[0.08em] text-muted">
                     {t.experience.contribution}
                   </h3>
-                  <div className="space-y-4 text-sm">
+                  <div className="space-y-4">
                     <ReactMarkdown components={markdownComponents}>
                       {selected.fullDescription[locale]}
                     </ReactMarkdown>
@@ -175,7 +175,7 @@ export function Projects() {
                     href={selected.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-7 inline-flex items-center gap-2 border-b border-accent pb-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+                    className="mt-7 inline-flex items-center gap-2 border-b border-border pb-1 font-mono text-xs font-medium text-foreground transition-colors hover:border-accent/50 hover:text-accent"
                   >
                     {t.experience.visitSite} <span aria-hidden="true">↗</span>
                   </a>

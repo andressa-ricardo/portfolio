@@ -6,12 +6,12 @@ export function LanguageToggle() {
   const { locale, setLocale } = useTranslation();
 
   return (
-    <div className="flex items-center gap-1 text-xs font-medium">
+    <div className="flex items-center gap-1 font-mono text-[10px] font-medium">
       <button
         onClick={() => setLocale("pt")}
         className={`rounded px-1.5 py-0.5 transition-colors duration-200 ${
           locale === "pt"
-            ? "text-accent"
+            ? "text-foreground"
             : "text-muted hover:text-foreground"
         }`}
         aria-label="Português"
@@ -23,7 +23,7 @@ export function LanguageToggle() {
         onClick={() => setLocale("en")}
         className={`rounded px-1.5 py-0.5 transition-colors duration-200 ${
           locale === "en"
-            ? "text-accent"
+            ? "text-foreground"
             : "text-muted hover:text-foreground"
         }`}
         aria-label="English"

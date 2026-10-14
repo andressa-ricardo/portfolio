@@ -31,7 +31,7 @@ export function Education() {
   return (
     <section id="education" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
       <div className="mb-8 flex items-center justify-between gap-4 pb-4">
-        <p className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
+        <p className="text-base font-medium tracking-[-0.025em] text-foreground sm:text-lg">
           <span className="text-accent"></span> {t.education.title}
         </p>
       </div>
@@ -55,10 +55,10 @@ export function Education() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.05 }}
                 onClick={() => setSelectedIndex(index)}
-                className={`relative mb-2 w-full rounded-xl border border-border px-4 py-5 text-left transition-colors sm:px-5 ${active ? "bg-accent/10" : "hover:bg-foreground/[0.025]"}`}
+                className={`relative mb-2 w-full rounded-xl border border-border px-4 py-5 text-left transition-colors sm:px-5 ${active ? "bg-foreground/[0.05]" : "hover:bg-foreground/[0.025]"}`}
               >
                 {active && (
-                  <span className="absolute -left-[29px] top-0 h-full w-px bg-accent sm:-left-[37px]" />
+                  <span className="absolute -left-[29px] top-0 h-full w-px bg-foreground/40 sm:-left-[37px]" />
                 )}
                 <time className="text-[11px] text-muted">
                   {formatPeriod(
@@ -68,9 +68,7 @@ export function Education() {
                     t.experience.present,
                   )}
                 </time>
-                <h3
-                  className={`mt-3 text-base font-medium tracking-[-0.02em] transition-colors ${active ? "text-accent" : "text-foreground"}`}
-                >
+                <h3 className="mt-3 text-sm font-medium tracking-[-0.02em] text-foreground">
                   {item.institution}
                 </h3>
                 <p className="mt-2 text-xs leading-5 text-muted">
@@ -91,7 +89,7 @@ export function Education() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-full border border-accent/40 text-accent">
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted">
                   <svg
                     width="20"
                     height="20"
@@ -107,10 +105,10 @@ export function Education() {
                     <path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
                   </svg>
                 </div>
-                <h2 className="text-2xl font-medium tracking-[-0.035em] text-foreground sm:text-3xl">
+                <h2 className="text-xl font-medium tracking-[-0.03em] text-foreground sm:text-2xl">
                   {selected.field[locale]}
                 </h2>
-                <p className="mt-3 text-sm font-semibold text-accent">
+                <p className="mt-3 font-mono text-xs font-medium text-foreground">
                   {selected.institution}
                 </p>
                 <div className="mt-7 grid gap-3 border-y border-border py-5 sm:grid-cols-2">
@@ -118,7 +116,7 @@ export function Education() {
                     <p className="text-[10px] uppercase tracking-[0.08em] text-muted">
                       {t.education.degreeLabel}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-foreground">
+                    <p className="mt-2 font-mono text-xs text-foreground">
                       {selected.degree[locale]}
                     </p>
                   </div>
@@ -126,7 +124,7 @@ export function Education() {
                     <p className="text-[10px] uppercase tracking-[0.08em] text-muted">
                       {t.education.periodLabel}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-foreground">
+                    <p className="mt-2 font-mono text-xs text-foreground">
                       {formatPeriod(
                         selected.period.start,
                         selected.period.end,
@@ -137,7 +135,7 @@ export function Education() {
                   </div>
                 </div>
                 {selected.description && (
-                  <p className="mt-7 max-w-2xl text-sm leading-7 text-muted">
+                  <p className="mt-7 max-w-2xl font-mono text-xs leading-6 text-muted">
                     {selected.description[locale]}
                   </p>
                 )}
