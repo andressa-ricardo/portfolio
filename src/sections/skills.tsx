@@ -5,30 +5,42 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { IconType } from "react-icons";
 import {
   SiCloudflare,
+  SiBootstrap,
   SiConvex,
   SiExpo,
   SiGit,
+  SiGithub,
   SiGithubactions,
+  SiGitlab,
+  SiGrafana,
   SiHtml5,
   SiIntellijidea,
+  SiJira,
   SiJavascript,
+  SiLinux,
   SiMysql,
   SiN8N,
   SiNextdotjs,
   SiNodedotjs,
   SiOpenapiinitiative,
+  SiPm2,
+  SiPostman,
   SiPostgresql,
   SiPrisma,
   SiReact,
+  SiSass,
   SiSequelize,
+  SiSpring,
+  SiStripe,
   SiSupabase,
+  SiSwift,
   SiTailwindcss,
   SiTypescript,
   SiVercel,
   SiVuedotjs,
 } from "react-icons/si";
-import { FaAws, FaJava } from "react-icons/fa6";
-import { VscCode, VscVscode } from "react-icons/vsc";
+import { FaAws, FaCreditCard, FaJava } from "react-icons/fa6";
+import { VscCode, VscTools, VscVscode } from "react-icons/vsc";
 import { useTranslation } from "@/components/language-provider";
 import { skills, type Skill, type SkillLevel } from "@/data/resume";
 
@@ -49,7 +61,7 @@ const FILTERS: TechCategory[] = [
   "infrastructure",
 ];
 
-const MOBILE_SKILLS = new Set(["React Native", "Expo"]);
+const MOBILE_SKILLS = new Set(["React Native", "Expo", "Swift"]);
 const DATABASE_SKILLS = new Set([
   "PostgreSQL",
   "MySQL",
@@ -67,12 +79,19 @@ const SKILL_ICONS: Record<string, IconType> = {
   "Vue.js": SiVuedotjs,
   JavaScript: SiJavascript,
   "HTML & CSS": SiHtml5,
+  Bootstrap: SiBootstrap,
   "Tailwind CSS": SiTailwindcss,
+  Sass: SiSass,
+  Swift: SiSwift,
   "Node.js": SiNodedotjs,
+  Spring: SiSpring,
   "REST APIs": SiOpenapiinitiative,
   Convex: SiConvex,
   Supabase: SiSupabase,
   Java: FaJava,
+  Stripe: SiStripe,
+  Asaas: FaCreditCard,
+  "Guru Pagamentos": FaCreditCard,
   AWS: FaAws,
   "Amazon EC2": FaAws,
   "Amazon S3": FaAws,
@@ -80,7 +99,15 @@ const SKILL_ICONS: Record<string, IconType> = {
   Vercel: SiVercel,
   n8n: SiN8N,
   "CI/CD": SiGithubactions,
-  "Git & GitHub": SiGit,
+  PM2: SiPm2,
+  Linux: SiLinux,
+  Grafana: SiGrafana,
+  Git: SiGit,
+  GitHub: SiGithub,
+  GitLab: SiGitlab,
+  Postman: SiPostman,
+  Jira: SiJira,
+  Integrator: VscTools,
   "VS Code": VscVscode,
   IntelliJ: SiIntellijidea,
   PostgreSQL: SiPostgresql,
