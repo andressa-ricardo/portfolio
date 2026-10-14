@@ -6,7 +6,7 @@ export interface FavoriteSong {
 }
 
 export interface ShelfBook {
-  title: string;
+  title: { pt: string; en: string };
   author: string;
   cover?: string;
   rating?: 1 | 2 | 3 | 4 | 5;
@@ -55,8 +55,103 @@ export const favoriteSongs: FavoriteSong[] = [
   },
 ];
 
+export const booksRead: ShelfBook[] = [
+  {
+    title: { pt: "A Metamorfose", en: "The Metamorphosis" },
+    author: "Franz Kafka",
+    cover:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_998936-MLA112165455942_062026-F.webp",
+    rating: 5,
+  },
+  {
+    title: { pt: "Noites Brancas", en: "White Nights" },
+    author: "Fiódor Dostoiévski",
+    cover: "https://m.media-amazon.com/images/I/7143D7foVmL._SL1500_.jpg",
+    rating: 4,
+  },
+  {
+    title: { pt: "O diário de Anne Frank", en: "The Diary of a Young Girl" },
+    author: "Anne Frank",
+    cover: "https://m.media-amazon.com/images/I/81yKgdRQqHL._SL1500_.jpg",
+    rating: 5,
+  },
+  {
+    title: { pt: "Verity", en: "Verity" },
+    author: "Colleen Hoover",
+    cover:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_909003-MLU50881573316_072022-F.webp",
+    rating: 5,
+  },
+  {
+    title: { pt: "Crepúsculo", en: "Twilight" },
+    author: "Stephenie Meyer",
+    cover: "https://m.media-amazon.com/images/I/618fXbK+OkL._SL1500_.jpg",
+    rating: 5,
+  },
+  {
+    title: { pt: "Lua Nova", en: "New Moon" },
+    author: "Stephenie Meyer",
+    cover: "https://m.media-amazon.com/images/I/7153D5oFumL._SL1500_.jpg",
+    rating: 5,
+  },
+  {
+    title: { pt: "Eclipse", en: "Eclipse" },
+    author: "Stephenie Meyer",
+    cover: "https://m.media-amazon.com/images/I/71PQWYk5YAL._SL1500_.jpg",
+    rating: 4,
+  },
+  {
+    title: { pt: "Amanhecer", en: "Breaking Dawn" },
+    author: "Stephenie Meyer",
+    cover: "https://m.media-amazon.com/images/I/71DW9z3UXkL._SL1500_.jpg",
+    rating: 5,
+  },
+  {
+    title: { pt: "Sol da Meia-Noite", en: "Midnight Sun" },
+    author: "Stephenie Meyer",
+    cover: "https://m.media-amazon.com/images/I/815mbcFisDL._SL1500_.jpg",
+    rating: 5,
+  },
+
+  {
+    title: { pt: "O poder do hábito", en: "The Power of Habit" },
+    author: "Charles Duhigg",
+    cover: "https://m.media-amazon.com/images/I/815iPX0SgkL._SL1500_.jpg",
+    rating: 4,
+  },
+  {
+    title: { pt: "Orgulho e Preconceito", en: "Pride and Prejudice" },
+    author: "Jane Austen",
+    cover: "https://m.media-amazon.com/images/I/71Xta4Nf7uL._SL1360_.jpg",
+    rating: 5,
+  },
+];
+
+export const readingList: ShelfBook[] = [
+  {
+    title: { pt: "Memórias do Subsolo", en: "Notes from Underground" },
+    author: "Fiódor Dostoiévski",
+    cover:
+      "https://http2.mlstatic.com/D_NQ_NP_2X_657300-MLA112164460946_062026-F.webp",
+  },
+
+  {
+    title: { pt: "Meditações", en: "Meditations" },
+    author: "Marco Aurélio",
+    cover: "https://m.media-amazon.com/images/I/818piLnMRgL._SL1500_.jpg",
+  },
+  {
+    title: { pt: "Ikigai", en: "Ikigai" },
+    author: "Ken Mogi",
+    cover: "https://m.media-amazon.com/images/I/71Li7BDmzgL._SL1500_.jpg",
+  },
+  {
+    title: { pt: "O Alquimista", en: "The Alchemist" },
+    author: "Paulo Coelho",
+    cover: "https://m.media-amazon.com/images/I/81slUinjTlS._SL1500_.jpg",
+  },
+];
+
 // Conteúdo pessoal a ser preenchido conforme Andressa enviar suas escolhas.
-export const booksRead: ShelfBook[] = [];
-export const readingList: ShelfBook[] = [];
 export const personalInterests: PersonalInterest[] = [];
 export const currentMoments: CurrentMoment[] = [];

@@ -46,23 +46,42 @@ function Stars({ rating = 0 }: { rating?: number }) {
   );
 }
 
-function BookGrid({ items, empty }: { items: ShelfBook[]; empty: string }) {
+function BookGrid({
+  items,
+  empty,
+  locale,
+}: {
+  items: ShelfBook[];
+  empty: string;
+  locale: "pt" | "en";
+}) {
   if (items.length === 0) return <EmptyState>{empty}</EmptyState>;
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(140px,190px))] gap-4">
       {items.map((book) => (
         <article
-          key={`${book.title}-${book.author}`}
-          className="rounded-2xl border border-border p-5"
+          key={`${book.title.pt}-${book.author}`}
+          className="overflow-hidden rounded-3xl border border-border bg-foreground/[0.02]"
         >
-          <h4 className="font-medium text-foreground">{book.title}</h4>
-          <p className="mt-1 text-xs text-muted">{book.author}</p>
-          {book.rating && (
-            <div className="mt-4">
-              <Stars rating={book.rating} />
-            </div>
+          {book.cover && (
+            <img
+              src={book.cover}
+              alt={`${locale === "pt" ? "Capa de" : "Cover of"} ${book.title[locale]}`}
+              className="aspect-[2/3] w-full bg-foreground/[0.025] object-contain"
+            />
           )}
+          <div className="p-5">
+            <h4 className="font-medium text-foreground">
+              {book.title[locale]}
+            </h4>
+            <p className="mt-1 text-xs text-muted">{book.author}</p>
+            {book.rating && (
+              <div className="mt-4">
+                <Stars rating={book.rating} />
+              </div>
+            )}
+          </div>
         </article>
       ))}
     </div>
@@ -73,6 +92,7 @@ export function BeyondCode() {
   const { t, locale } = useTranslation();
   const [activeTab, setActiveTab] = useState<Tab>("spotify");
   const [activeSongIndex, setActiveSongIndex] = useState(0);
+  const [shelfView, setShelfView] = useState<"read" | "reading">("read");
   const activeSong = favoriteSongs[activeSongIndex];
   const activeSongId = activeSong?.spotifyUrl
     .split("/track/")[1]
@@ -217,26 +237,45 @@ export function BeyondCode() {
                 <p className="mt-3 text-sm leading-7 text-muted">
                   {t.beyondPage.shelfDescription}
                 </p>
-                <div className="mt-8 grid gap-10 lg:grid-cols-2">
-                  <div>
-                    <h4 className="mb-4 text-sm font-semibold text-foreground">
-                      {t.beyondPage.read}
-                    </h4>
-                    <BookGrid
-                      items={booksRead}
-                      empty={t.beyondPage.readEmpty}
-                    />
-                  </div>
-                  <div>
-                    <h4 className="mb-4 text-sm font-semibold text-foreground">
-                      {t.beyondPage.readingList}
-                    </h4>
-                    <BookGrid
-                      items={readingList}
-                      empty={t.beyondPage.readingEmpty}
-                    />
-                  </div>
+                <div
+                  className="mt-7 flex flex-wrap gap-2"
+                  role="group"
+                  aria-label={t.beyondPage.shelfTitle}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setShelfView("read")}
+                    aria-pressed={shelfView === "read"}
+                    className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${shelfView === "read" ? "bg-accent text-white" : "border border-border text-muted hover:border-accent/40 hover:text-foreground"}`}
+                  >
+                    {t.beyondPage.read}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShelfView("reading")}
+                    aria-pressed={shelfView === "reading"}
+                    className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${shelfView === "reading" ? "bg-accent text-white" : "border border-border text-muted hover:border-accent/40 hover:text-foreground"}`}
+                  >
+                    {t.beyondPage.readingList}
+                  </button>
                 </div>
+                <motion.div
+                  key={shelfView}
+                  className="mt-8"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <BookGrid
+                    items={shelfView === "read" ? booksRead : readingList}
+                    empty={
+                      shelfView === "read"
+                        ? t.beyondPage.readEmpty
+                        : t.beyondPage.readingEmpty
+                    }
+                    locale={locale}
+                  />
+                </motion.div>
               </div>
             )}
 
