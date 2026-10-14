@@ -47,24 +47,18 @@ export function HomeHub() {
         aria-hidden="true"
       />
 
-      <p className="relative mb-8 text-[9px] font-medium uppercase tracking-[0.08em] text-muted lg:absolute lg:left-12 lg:top-9 lg:mb-0">
-        {t.home.edition}
-      </p>
       <p className="relative mb-8 text-right text-[9px] font-medium uppercase tracking-[0.08em] text-muted lg:absolute lg:right-12 lg:top-9 lg:mb-0">
         {t.home.universe}
       </p>
 
       <div className="relative grid gap-4 sm:grid-cols-2 lg:h-full lg:grid-cols-[minmax(180px,1fr)_minmax(360px,1.6fr)_minmax(180px,1fr)] lg:grid-rows-3 lg:gap-x-8 lg:gap-y-4 lg:py-12 xl:grid-cols-[minmax(240px,1fr)_minmax(460px,1.6fr)_minmax(240px,1fr)] xl:gap-x-12">
-        <div className="order-first col-span-full flex flex-col items-center justify-center py-7 text-center lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:py-0">
+        <div className="order-first col-span-full flex flex-col items-center justify-center py-7 text-center lg:col-span-1 lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:py-0">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="mb-5 flex items-center gap-3 text-[9px] uppercase tracking-[0.08em] text-muted"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            {t.home.role}
-          </motion.p>
+          ></motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
