@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useTranslation } from "@/components/language-provider";
 
 const ITEMS = [
@@ -37,6 +37,118 @@ const ITEMS = [
   },
 ] as const;
 
+const CODE_FRAGMENTS = [
+  {
+    code: "const ideas = await create();",
+    top: "17%",
+    left: "17%",
+    duration: 21,
+    delay: 0,
+  },
+  {
+    code: "<Experience meaningful />",
+    top: "24%",
+    left: "59%",
+    duration: 19,
+    delay: 1.8,
+  },
+  {
+    code: "type Curiosity = 'infinite';",
+    top: "39%",
+    left: "8%",
+    duration: 23,
+    delay: 0.7,
+  },
+  {
+    code: "function buildFuture() {",
+    top: "43%",
+    left: "69%",
+    duration: 18,
+    delay: 2.4,
+  },
+  {
+    code: "return code + creativity;",
+    top: "58%",
+    left: "14%",
+    duration: 22,
+    delay: 1.1,
+  },
+  {
+    code: "interface HumanExperience",
+    top: "64%",
+    left: "64%",
+    duration: 20,
+    delay: 3.1,
+  },
+  {
+    code: "const [ideas, setIdeas] = useState([]);",
+    top: "31%",
+    left: "36%",
+    duration: 24,
+    delay: 2,
+  },
+  {
+    code: "return <Future />;",
+    top: "76%",
+    left: "53%",
+    duration: 17,
+    delay: 0.4,
+  },
+  {
+    code: "while (learning) evolve();",
+    top: "83%",
+    left: "26%",
+    duration: 22,
+    delay: 2.8,
+  },
+] as const;
+
+function FloatingCode() {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <div
+      className="pointer-events-none absolute inset-x-[5%] top-0 z-0 h-[360px] select-none overflow-hidden [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_78%)] lg:inset-y-[4%] lg:h-auto"
+      aria-hidden="true"
+    >
+      {CODE_FRAGMENTS.map((fragment, index) => (
+        <motion.span
+          key={fragment.code}
+          className={`absolute whitespace-nowrap font-mono tracking-[-0.02em] text-foreground/[0.16] blur-[1px] dark:text-foreground/[0.18] ${
+            index >= 7
+              ? "hidden text-[9px] lg:block"
+              : index >= 5
+                ? index === 6
+                  ? "hidden text-[10px] sm:block sm:text-[11px]"
+                  : "hidden text-[9px] sm:block"
+                : index === 1
+                  ? "text-[10px] sm:text-[11px]"
+                  : "text-[9px] sm:text-[10px]"
+          }`}
+          style={{ top: fragment.top, left: fragment.left }}
+          animate={
+            shouldReduceMotion
+              ? { opacity: 0.9 }
+              : {
+                  x: [0, index % 2 === 0 ? 10 : -9, 0],
+                  y: [0, -9, 4, 0],
+                  opacity: [0.82, 1, 0.86, 0.82],
+                }
+          }
+          transition={{
+            duration: fragment.duration,
+            delay: fragment.delay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          {fragment.code}
+        </motion.span>
+      ))}
+    </div>
+  );
+}
+
 export function HomeHub() {
   const { t } = useTranslation();
 
@@ -47,7 +159,9 @@ export function HomeHub() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto grid w-full max-w-[1380px] gap-4 sm:grid-cols-2 lg:h-full lg:grid-cols-[minmax(180px,1fr)_minmax(360px,1.5fr)_minmax(180px,1fr)] lg:grid-rows-3 lg:gap-x-7 lg:gap-y-4 lg:py-12 xl:grid-cols-[minmax(220px,1fr)_minmax(420px,1.5fr)_minmax(220px,1fr)] xl:gap-x-9">
+      <FloatingCode />
+
+      <div className="relative z-10 mx-auto grid w-full max-w-[1380px] gap-4 sm:grid-cols-2 lg:h-full lg:grid-cols-[minmax(180px,1fr)_minmax(360px,1.5fr)_minmax(180px,1fr)] lg:grid-rows-3 lg:gap-x-7 lg:gap-y-4 lg:py-12 xl:grid-cols-[minmax(220px,1fr)_minmax(420px,1.5fr)_minmax(220px,1fr)] xl:gap-x-9">
         <div className="order-first col-span-full flex flex-col items-center justify-center py-7 text-center lg:col-span-1 lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:py-0">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
