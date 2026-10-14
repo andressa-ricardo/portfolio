@@ -42,7 +42,7 @@ import {
 import { FaAws, FaCreditCard, FaJava } from "react-icons/fa6";
 import { VscCode, VscTools, VscVscode } from "react-icons/vsc";
 import { useTranslation } from "@/components/language-provider";
-import { skills, type Skill, type SkillLevel } from "@/data/resume";
+import { skills, type Skill } from "@/data/resume";
 
 type TechCategory =
   | "all"
@@ -195,43 +195,18 @@ function getCategory(skill: Skill): Exclude<TechCategory, "all"> {
   return "infrastructure";
 }
 
-function LevelIndicator({ level }: { level: SkillLevel }) {
-  return (
-    <div className="flex gap-1.5" aria-hidden="true">
-      {Array.from({ length: 5 }).map((_, index) => (
-        <span
-          key={index}
-          className={`h-1.5 w-5 rounded-full ${index < level ? "bg-foreground/55" : "bg-border"}`}
-        />
-      ))}
-    </div>
-  );
-}
-
 export function Skills() {
   const { locale } = useTranslation();
   const copy = COPY[locale];
   const [filter, setFilter] = useState<TechCategory>("all");
-  const [selectedName, setSelectedName] = useState(skills[0]?.name ?? "");
 
   const filteredSkills =
     filter === "all"
       ? skills
       : skills.filter((skill) => getCategory(skill) === filter);
-  const selected =
-    skills.find((skill) => skill.name === selectedName) ?? filteredSkills[0];
-  const selectedCategory = selected ? getCategory(selected) : "frontend";
-  const SelectedIcon = selected
-    ? (SKILL_ICONS[selected.name] ?? VscCode)
-    : VscCode;
 
   const selectFilter = (nextFilter: TechCategory) => {
     setFilter(nextFilter);
-    const first =
-      nextFilter === "all"
-        ? skills[0]
-        : skills.find((skill) => getCategory(skill) === nextFilter);
-    if (first) setSelectedName(first.name);
   };
 
   return (
@@ -263,86 +238,36 @@ export function Skills() {
         ))}
       </div>
 
-      <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.55fr)_minmax(250px,0.75fr)] lg:gap-12">
-        <motion.div
-          layout
-          className="grid grid-cols-3 gap-3 sm:grid-cols-4 xl:grid-cols-5"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredSkills.map((skill, index) => {
-              const active = selected?.name === skill.name;
-              const SkillIcon = SKILL_ICONS[skill.name] ?? VscCode;
-              return (
-                <motion.button
-                  layout
-                  key={skill.name}
-                  type="button"
-                  initial={{ opacity: 0, scale: 0.92 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.92 }}
-                  transition={{
-                    duration: 0.2,
-                    delay: Math.min(index * 0.015, 0.18),
-                  }}
-                  onClick={() => setSelectedName(skill.name)}
-                  aria-pressed={active}
-                  className={`flex aspect-square flex-col items-center justify-center gap-2 rounded-full border p-2 font-mono text-[9px] leading-4 transition-colors sm:text-[10px] ${
-                    active
-                      ? "border-accent/55 bg-accent/[0.07] text-foreground"
-                      : "border-border text-muted hover:border-foreground/30 hover:bg-foreground/[0.025] hover:text-foreground"
-                  }`}
-                >
-                  <SkillIcon
-                    className="h-5 w-5 sm:h-6 sm:w-6"
-                    aria-hidden="true"
-                  />
-                  <span>{skill.name}</span>
-                </motion.button>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
-
-        <div className="lg:sticky lg:top-8 lg:self-start lg:border-l lg:border-border lg:pl-10">
-          <AnimatePresence mode="wait">
-            {selected && (
+      <motion.div
+        layout
+        className="mt-10 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+      >
+        <AnimatePresence mode="popLayout">
+          {filteredSkills.map((skill, index) => {
+            const SkillIcon = SKILL_ICONS[skill.name] ?? VscCode;
+            return (
               <motion.div
-                key={selected.name}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.2 }}
+                layout
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.92 }}
+                transition={{
+                  duration: 0.2,
+                  delay: Math.min(index * 0.015, 0.18),
+                }}
+                className="flex aspect-square flex-col items-center justify-center gap-2 rounded-full border border-border p-2 font-mono text-[9px] leading-4 text-muted transition-colors hover:border-foreground/30 hover:bg-foreground/[0.025] hover:text-foreground sm:text-[10px]"
               >
-                <p className="font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
-                  {copy.filters[selectedCategory]}
-                </p>
-                <div className="mt-3 flex items-center gap-3">
-                  <SelectedIcon
-                    className="h-6 w-6 shrink-0 text-muted"
-                    aria-hidden="true"
-                  />
-                  <h3 className="text-2xl font-medium tracking-[-0.035em] text-foreground">
-                    {selected.name}
-                    <span className="text-accent">.</span>
-                  </h3>
-                </div>
-                <p className="mt-4 font-mono text-xs leading-6 text-muted">
-                  {copy.details[selectedCategory]}
-                </p>
-                <div className="mt-6">
-                  <LevelIndicator level={selected.level} />
-                  <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.06em] text-muted">
-                    {copy.levels[selected.level]}
-                  </p>
-                </div>
-                <p className="mt-8 font-mono text-[9px] uppercase tracking-[0.06em] text-muted">
-                  {copy.footer}
-                </p>
+                <SkillIcon
+                  className="h-5 w-5 sm:h-6 sm:w-6"
+                  aria-hidden="true"
+                />
+                <span>{skill.name}</span>
               </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
+            );
+          })}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 }
