@@ -2,6 +2,51 @@
   "header": {
     "name": "Andressa Ricardo"
   },
+  "home": {
+    "edition": "Portfólio — vol. 01",
+    "universe": "Um pequeno universo meu",
+    "role": "Desenvolvedora & mente criativa",
+    "intro": "Criando experiências digitais significativas com código, criatividade e curiosidade.",
+    "direction": "Escolha uma direção. Sinta-se em casa.",
+    "footerLine": "Feito de código & curiosidade",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "backHome": "Voltar ao início",
+    "items": {
+      "about": "Sobre mim",
+      "journey": "Minha trajetória",
+      "projects": "Projetos selecionados",
+      "tech": "Universo tech",
+      "beyond": "Além do código",
+      "contact": "Vamos conversar"
+    }
+  },
+  "spaces": {
+    "about": {
+      "title": "Sobre mim",
+      "description": "Um pouco sobre quem eu sou, como penso e o tipo de experiência digital que gosto de construir."
+    },
+    "journey": {
+      "title": "Minha trajetória",
+      "description": "Os projetos, experiências e estudos que formaram meu caminho como desenvolvedora."
+    },
+    "projects": {
+      "title": "Projetos selecionados",
+      "description": "Uma seleção de produtos e experiências digitais que ajudei a transformar em realidade."
+    },
+    "tech": {
+      "title": "Universo tech",
+      "description": "Tecnologias, ferramentas e aprendizados que fazem parte do meu trabalho diário."
+    },
+    "beyond": {
+      "title": "Além do código",
+      "description": "Outras habilidades e interesses que ampliam a forma como observo, colaboro e crio."
+    },
+    "contact": {
+      "title": "Vamos conversar",
+      "description": "Tem uma ideia, um projeto ou apenas quer trocar experiências? Estou por aqui."
+    }
+  },
   "nav": {
     "about": "Sobre",
     "services": "Serviços",

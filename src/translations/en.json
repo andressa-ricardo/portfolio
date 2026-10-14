@@ -2,6 +2,51 @@
   "header": {
     "name": "Andressa Ricardo"
   },
+  "home": {
+    "edition": "Portfolio — vol. 01",
+    "universe": "A small universe of mine",
+    "role": "Developer & creative mind",
+    "intro": "Creating meaningful digital experiences with code, creativity, and curiosity.",
+    "direction": "Choose a direction. Make yourself at home.",
+    "footerLine": "Made of code & curiosity",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "backHome": "Back home",
+    "items": {
+      "about": "About me",
+      "journey": "My journey",
+      "projects": "Selected projects",
+      "tech": "Tech universe",
+      "beyond": "Beyond code",
+      "contact": "Let's talk"
+    }
+  },
+  "spaces": {
+    "about": {
+      "title": "About me",
+      "description": "A little about who I am, how I think, and the kind of digital experience I love to build."
+    },
+    "journey": {
+      "title": "My journey",
+      "description": "The projects, experiences, and studies that shaped my path as a developer."
+    },
+    "projects": {
+      "title": "Selected projects",
+      "description": "A selection of products and digital experiences I helped bring to life."
+    },
+    "tech": {
+      "title": "Tech universe",
+      "description": "Technologies, tools, and lessons that are part of my everyday work."
+    },
+    "beyond": {
+      "title": "Beyond code",
+      "description": "Other skills and interests that broaden the way I observe, collaborate, and create."
+    },
+    "contact": {
+      "title": "Let's talk",
+      "description": "Have an idea, a project, or just want to exchange experiences? I'm around."
+    }
+  },
   "nav": {
     "about": "About",
     "services": "Services",

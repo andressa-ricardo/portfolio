@@ -1,92 +1,102 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
 import { useTranslation } from "@/components/language-provider";
 
 const NAV_ITEMS = [
-  "about",
-  "services",
-  "experience",
-  "projects",
-  "skills",
-  "education",
-  "courses",
-  "languages",
-  "contact",
+  { href: "/sobre", key: "about" },
+  { href: "/trajetoria", key: "journey" },
+  { href: "/projetos", key: "projects" },
+  { href: "/universo-tech", key: "tech" },
+  { href: "/alem-do-codigo", key: "beyond" },
+  { href: "/contato", key: "contact" },
 ] as const;
 
 export function Header() {
   const { t } = useTranslation();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-3 px-5 py-3 sm:px-6 sm:py-4 lg:px-8">
-        {/* Logo */}
-        <a
-          href="#"
-          className="min-w-0 truncate text-lg font-bold tracking-tight text-foreground"
+    <header className="relative z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-[72px] w-full max-w-[1728px] items-center justify-between gap-4 px-5 sm:h-[84px] sm:px-8 lg:px-12">
+        <Link
+          href="/"
+          className="group flex min-w-0 items-center gap-5"
+          onClick={() => setOpen(false)}
         >
-          {t.header.name}
-          <span className="text-accent">.</span>
-        </a>
+          <span className="text-[2rem] font-semibold leading-none tracking-[-0.08em] text-foreground">
+            ar<span className="text-accent">.</span>
+          </span>
+          <span className="hidden text-[10px] font-medium uppercase tracking-[0.06em] text-muted transition-colors group-hover:text-foreground sm:block">
+            {t.header.name}
+          </span>
+        </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 md:flex">
-          {NAV_ITEMS.map((key) => (
-            <a
-              key={key}
-              href={`#${key}`}
-              className="group relative rounded-md px-3 py-2 text-sm text-muted transition-colors duration-200 hover:text-foreground"
-            >
-              {t.nav[key]}
-              <span className="absolute inset-x-3 bottom-1 h-px origin-left scale-x-0 rounded-full bg-gradient-to-r from-accent to-accent-hover transition-transform duration-200 group-hover:scale-x-100" />
-            </a>
-          ))}
-        </nav>
-
-        {/* Actions */}
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex items-center gap-2 sm:gap-3">
           <LanguageToggle />
           <ThemeToggle />
-
-          {/* Mobile hamburger */}
           <button
-            onClick={() => setOpen(!open)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-accent/10 md:hidden"
-            aria-label="Menu"
+            type="button"
+            onClick={() => setOpen((value) => !value)}
+            aria-expanded={open}
+            aria-controls="site-menu"
+            aria-label={open ? t.home.closeMenu : t.home.openMenu}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent/50 hover:text-accent"
           >
             {open ? (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                aria-hidden="true"
+              >
+                <path d="M5 5 19 19M19 5 5 19" />
               </svg>
             ) : (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                aria-hidden="true"
+              >
+                <path d="M4 7h16M4 12h16M4 17h16" />
               </svg>
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile nav */}
       {open && (
-        <nav className="border-t border-border/50 bg-background px-5 pb-4 md:hidden">
-          {NAV_ITEMS.map((key) => (
-            <a
-              key={key}
-              href={`#${key}`}
-              onClick={() => setOpen(false)}
-              className="block rounded-md px-3 py-2.5 text-sm text-muted transition-colors hover:text-foreground"
-            >
-              {t.nav[key]}
-            </a>
-          ))}
+        <nav
+          id="site-menu"
+          className="absolute inset-x-0 top-full border-b border-border bg-background/98 px-5 py-4 shadow-2xl shadow-black/5 backdrop-blur-xl sm:px-8 lg:px-12"
+        >
+          <div className="mx-auto grid w-full max-w-[1728px] gap-1 sm:grid-cols-2 lg:grid-cols-3">
+            {NAV_ITEMS.map(({ href, key }, index) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                className={`flex items-center gap-4 rounded-xl px-4 py-3 text-sm transition-colors hover:bg-accent/8 hover:text-accent ${pathname === href ? "text-accent" : "text-foreground"}`}
+              >
+                <span className="font-mono text-[10px] text-accent">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {t.home.items[key]}
+              </Link>
+            ))}
+          </div>
         </nav>
       )}
     </header>
