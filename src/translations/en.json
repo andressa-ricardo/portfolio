@@ -42,6 +42,32 @@
       "description": "Have an idea, a project, or just want to exchange experiences? I'm around."
     }
   },
+  "beyondPage": {
+    "headline": "The story goes beyond.",
+    "intro": "Away from the screen. The small things that make up a life.",
+    "tabLabel": "Personal spaces",
+    "tabs": {
+      "spotify": "Spotify corner",
+      "shelf": "My bookshelf",
+      "interests": "Hobbies & interests",
+      "current": "Currently"
+    },
+    "spotifyTitle": "Spotify corner",
+    "spotifyDescription": "The soundtrack of my world. My top five favorite songs on Spotify.",
+    "spotifyEmpty": "The five favorite songs will be added here.",
+    "shelfTitle": "My bookshelf",
+    "shelfDescription": "Books that have stayed with me and the next ones on my list, along with my ratings.",
+    "read": "Books read",
+    "readingList": "Reading list",
+    "readEmpty": "The books I've read and their ratings will be added here.",
+    "readingEmpty": "The next books on my list will be added here.",
+    "interestsTitle": "Hobbies & interests",
+    "interestsDescription": "The curiosities and activities that are part of life beyond code.",
+    "interestsEmpty": "My hobbies and interests will be added here.",
+    "currentTitle": "Currently",
+    "currentDescription": "A small snapshot of what has my attention right now.",
+    "currentEmpty": "Current books, music, studies, and discoveries will be added here."
+  },
   "nav": {
     "about": "About",
     "services": "Services",

@@ -42,6 +42,32 @@
       "description": "Tem uma ideia, um projeto ou apenas quer trocar experiências? Estou por aqui."
     }
   },
+  "beyondPage": {
+    "headline": "A história vai além.",
+    "intro": "Longe da tela. As pequenas coisas que compõem uma vida.",
+    "tabLabel": "Espaços pessoais",
+    "tabs": {
+      "spotify": "Cantinho Spotify",
+      "shelf": "Minha estante",
+      "interests": "Hobbies & interesses",
+      "current": "Atualmente"
+    },
+    "spotifyTitle": "Cantinho Spotify",
+    "spotifyDescription": "A trilha sonora do meu mundo. Meu top 5 de músicas favoritas no Spotify.",
+    "spotifyEmpty": "As cinco músicas favoritas serão adicionadas aqui.",
+    "shelfTitle": "Minha estante",
+    "shelfDescription": "Livros que já passaram por mim e os próximos da lista, acompanhados pela minha avaliação.",
+    "read": "Livros lidos",
+    "readingList": "Lista de leitura",
+    "readEmpty": "Os livros lidos e suas avaliações serão adicionados aqui.",
+    "readingEmpty": "Os próximos livros da lista serão adicionados aqui.",
+    "interestsTitle": "Hobbies & interesses",
+    "interestsDescription": "As curiosidades e atividades que fazem parte da vida fora do código.",
+    "interestsEmpty": "Os hobbies e interesses serão adicionados aqui.",
+    "currentTitle": "Atualmente",
+    "currentDescription": "Um pequeno retrato do que está ocupando minha atenção agora.",
+    "currentEmpty": "Leituras, músicas, estudos e descobertas atuais serão adicionados aqui."
+  },
   "nav": {
     "about": "Sobre",
     "services": "Serviços",

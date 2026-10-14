@@ -1,10 +1,10 @@
 import { SpacePage } from "@/components/space-page";
-import { Languages } from "@/sections/languages-section";
+import { BeyondCode } from "@/sections/beyond-code";
 
 export default function BeyondCodePage() {
   return (
     <SpacePage space="beyond" number="05">
-      <Languages />
+      <BeyondCode />
     </SpacePage>
   );
 }
