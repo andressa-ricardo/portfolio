@@ -170,15 +170,15 @@ export const personalInterests: PersonalInterest[] = [
   {
     label: { pt: "Autocuidado", en: "Self-care" },
     detail: {
-      pt: "Skincare e cuidados com a pele e o corpo fazem parte da minha rotina. Cuidar de mim é algo que valorizo de verdade.",
-      en: "Skincare and taking care of my skin and body are part of my routine. Looking after myself is something I genuinely value.",
+      pt: "Skincare e cuidados com a pele e o corpo fazem parte da minha rotina. ",
+      en: "Skincare and taking care of my skin and body are part of my routine. ",
     },
   },
   {
     label: { pt: "Garimpos únicos", en: "One-of-a-kind finds" },
     detail: {
-      pt: "Adoro explorar brechós e encontrar peças únicas, cheias de personalidade e história.",
-      en: "I love exploring thrift stores and finding unique pieces filled with personality and history.",
+      pt: "Adoro explorar brechós e encontrar peças únicas e cheias de personalidade.",
+      en: "I love exploring thrift stores and finding unique pieces filled with personality.",
     },
   },
   {
