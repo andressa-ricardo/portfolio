@@ -47,10 +47,6 @@ export function HomeHub() {
         aria-hidden="true"
       />
 
-      <p className="relative mb-8 text-right text-[9px] font-medium uppercase tracking-[0.08em] text-muted lg:absolute lg:right-12 lg:top-9 lg:mb-0">
-        {t.home.universe}
-      </p>
-
       <div className="relative grid gap-4 sm:grid-cols-2 lg:h-full lg:grid-cols-[minmax(180px,1fr)_minmax(360px,1.6fr)_minmax(180px,1fr)] lg:grid-rows-3 lg:gap-x-8 lg:gap-y-4 lg:py-12 xl:grid-cols-[minmax(240px,1fr)_minmax(460px,1.6fr)_minmax(240px,1fr)] xl:gap-x-12">
         <div className="order-first col-span-full flex flex-col items-center justify-center py-7 text-center lg:col-span-1 lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:py-0">
           <motion.p
@@ -131,10 +127,6 @@ export function HomeHub() {
           </motion.div>
         ))}
       </div>
-
-      <p className="relative mt-8 text-center text-[10px] text-muted lg:absolute lg:bottom-6 lg:right-12 lg:mt-0">
-        {t.home.direction} <span className="ml-2 text-accent">↘</span>
-      </p>
     </main>
   );
 }
