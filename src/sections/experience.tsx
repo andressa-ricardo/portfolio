@@ -8,6 +8,7 @@ import { MediaGallery } from "@/components/media-gallery";
 import { ExperienceDetail } from "@/components/experience-detail";
 import {
   experienceEntries,
+  TYPE_BADGE,
   type ExperienceEntry,
   type ExperienceType,
 } from "@/data/experience";
@@ -91,15 +92,10 @@ export function Experience() {
 
   return (
     <section id="experience" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
-      <div className="mb-8 flex flex-col gap-5 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="font-mono text-[10px] text-accent">
-            01 — {t.experience.title}
-          </p>
-          <p className="mt-2 max-w-xl text-sm leading-6 text-muted">
-            {t.experience.timelineIntro}
-          </p>
-        </div>
+      <div className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6">
+        <p className="font-mono text-[10px] text-accent">
+          01 — {t.experience.title}
+        </p>
         <div
           className="flex flex-wrap gap-1"
           role="tablist"
@@ -160,13 +156,20 @@ export function Experience() {
                   )}
                 </time>
                 <h3
-                  className={`mt-3 text-lg font-medium tracking-[-0.025em] transition-colors ${active ? "text-accent" : "text-foreground"}`}
+                  className={`mt-3 text-base font-medium tracking-[-0.02em] transition-colors ${active ? "text-accent" : "text-foreground"}`}
                 >
                   {entry.company}
                 </h3>
-                <p className="mt-2 text-xs leading-5 text-muted">
-                  {entry.role[locale]}
-                </p>
+                <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-xs leading-5 text-muted">
+                    {entry.role[locale]}
+                  </p>
+                  <span
+                    className={`shrink-0 rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${TYPE_BADGE[entry.type]}`}
+                  >
+                    {t.experience.types[entry.type]}
+                  </span>
+                </div>
               </motion.button>
             );
           })}
@@ -185,19 +188,7 @@ export function Experience() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
               >
-                <p className="font-mono text-[10px] uppercase text-muted">
-                  {String(
-                    filtered.findIndex((entry) => entry.id === selected.id) + 1,
-                  ).padStart(2, "0")}{" "}
-                  /{" "}
-                  {formatPeriod(
-                    selected.period.start,
-                    selected.period.end,
-                    locale,
-                    t.experience.present,
-                  )}
-                </p>
-                <h2 className="mt-6 text-3xl font-medium tracking-[-0.04em] text-foreground sm:text-4xl">
+                <h2 className="text-2xl font-medium tracking-[-0.035em] text-foreground sm:text-3xl">
                   {selected.company}
                 </h2>
                 <p className="mt-4 text-base font-semibold text-foreground">
