@@ -287,27 +287,28 @@ export function BeyondCode() {
                 <p className="mt-3 text-sm leading-7 text-muted">
                   {t.beyondPage.interestsDescription}
                 </p>
-                <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-8 max-w-3xl">
                   {personalInterests.length === 0 ? (
-                    <div className="sm:col-span-2 lg:col-span-3">
-                      <EmptyState>{t.beyondPage.interestsEmpty}</EmptyState>
-                    </div>
+                    <EmptyState>{t.beyondPage.interestsEmpty}</EmptyState>
                   ) : (
-                    personalInterests.map((interest) => (
-                      <article
-                        key={interest.label[locale]}
-                        className="rounded-2xl border border-border p-5"
-                      >
-                        <h4 className="font-medium text-foreground">
-                          {interest.label[locale]}
-                        </h4>
-                        {interest.detail && (
-                          <p className="mt-2 text-sm leading-6 text-muted">
-                            {interest.detail[locale]}
-                          </p>
-                        )}
-                      </article>
-                    ))
+                    <ul className="space-y-5">
+                      {personalInterests.map((interest) => (
+                        <li
+                          key={interest.label[locale]}
+                          className="flex items-start gap-4"
+                        >
+                          <span
+                            className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-accent"
+                            aria-hidden="true"
+                          />
+                          {interest.detail && (
+                            <p className="text-sm leading-7 text-muted sm:text-base">
+                              {interest.detail[locale]}
+                            </p>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
                   )}
                 </div>
               </div>

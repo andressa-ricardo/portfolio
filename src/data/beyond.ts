@@ -152,6 +152,65 @@ export const readingList: ShelfBook[] = [
   },
 ];
 
-// Conteúdo pessoal a ser preenchido conforme Andressa enviar suas escolhas.
-export const personalInterests: PersonalInterest[] = [];
-export const currentMoments: CurrentMoment[] = [];
+export const personalInterests: PersonalInterest[] = [
+  {
+    label: { pt: "Leitura sem rótulos", en: "Reading without labels" },
+    detail: {
+      pt: "Leio de tudo — do romance à filosofia. Se um livro desperta minha curiosidade e me prende, sigo com ele até a última página.",
+      en: "I read across every genre, from romance to philosophy. If a book sparks my curiosity and draws me in, I will stay with it until the final page.",
+    },
+  },
+  {
+    label: { pt: "Movimento & equilíbrio", en: "Movement & balance" },
+    detail: {
+      pt: "Gosto de correr e me exercitar, com um carinho especial pela yoga e pelo equilíbrio que ela traz à rotina.",
+      en: "I enjoy running and exercising, with a special fondness for yoga and the sense of balance it brings to my routine.",
+    },
+  },
+  {
+    label: { pt: "Autocuidado", en: "Self-care" },
+    detail: {
+      pt: "Skincare e cuidados com a pele e o corpo fazem parte da minha rotina. Cuidar de mim é algo que valorizo de verdade.",
+      en: "Skincare and taking care of my skin and body are part of my routine. Looking after myself is something I genuinely value.",
+    },
+  },
+  {
+    label: { pt: "Garimpos únicos", en: "One-of-a-kind finds" },
+    detail: {
+      pt: "Adoro explorar brechós e encontrar peças únicas, cheias de personalidade e história.",
+      en: "I love exploring thrift stores and finding unique pieces filled with personality and history.",
+    },
+  },
+  {
+    label: {
+      pt: "História, matemática & curiosidade",
+      en: "History, mathematics & curiosity",
+    },
+    detail: {
+      pt: "Estudar história e matemática é um dos meus passatempos favoritos. Gosto tanto de descobrir como o mundo funciona quanto de quebrar a cabeça com cálculos.",
+      en: "Studying history and mathematics is one of my favorite pastimes. I enjoy discovering how the world works just as much as challenging myself with calculations.",
+    },
+  },
+  {
+    label: { pt: "Aprendendo guitarra", en: "Learning guitar" },
+    detail: {
+      pt: "Tenho uma guitarra e estou aprendendo a tocar, começando pelas músicas que mais gosto de ouvir.",
+      en: "I have a guitar and I am learning to play, starting with the songs I most enjoy listening to.",
+    },
+  },
+];
+
+export const currentMoments: CurrentMoment[] = [
+  {
+    category: { pt: "Aprendendo", en: "Learning" },
+    value: { pt: "A fazer crochê", en: "How to crochet" },
+  },
+  {
+    category: { pt: "Experimentando", en: "Exploring" },
+    value: { pt: "Vinhos diferentes", en: "Different wines" },
+  },
+  {
+    category: { pt: "Desenvolvendo", en: "Building" },
+    value: { pt: "Um aplicativo pessoal", en: "A personal app" },
+  },
+];
