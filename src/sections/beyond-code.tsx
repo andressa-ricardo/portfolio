@@ -57,35 +57,58 @@ function BookGrid({
 }) {
   if (items.length === 0) return <EmptyState>{empty}</EmptyState>;
 
+  const tilts = [
+    "-rotate-[1deg]",
+    "rotate-[0.6deg]",
+    "-rotate-[0.4deg]",
+    "rotate-[1deg]",
+  ];
+
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(140px,190px))] gap-4">
-      {items.map((book) => (
-        <article
-          key={`${book.title.pt}-${book.author}`}
-          className="overflow-hidden rounded-3xl border border-border bg-foreground/[0.02]"
-        >
-          {book.cover && (
-            <img
-              src={book.cover}
-              alt={`${locale === "pt" ? "Capa de" : "Cover of"} ${book.title[locale]}`}
-              className="aspect-[2/3] w-full bg-foreground/[0.025] object-contain"
-            />
-          )}
-          <div className="p-4">
-            <h4 className="text-sm font-medium text-foreground">
-              {book.title[locale]}
-            </h4>
-            <p className="mt-1 font-mono text-[10px] text-muted">
-              {book.author}
-            </p>
-            {book.rating && (
-              <div className="mt-4">
-                <Stars rating={book.rating} />
+    <div>
+      <div className="custom-scrollbar flex items-end gap-2 overflow-x-auto px-3 pb-3 pt-5 sm:gap-3">
+        {items.map((book, index) => (
+          <article
+            key={`${book.title.pt}-${book.author}`}
+            tabIndex={0}
+            aria-label={`${book.title[locale]}, ${book.author}`}
+            className={`group relative w-[108px] shrink-0 origin-bottom transition-transform duration-300 hover:-translate-y-2 hover:rotate-0 focus-visible:-translate-y-2 focus-visible:rotate-0 sm:w-[124px] ${tilts[index % tilts.length]}`}
+          >
+            <div className="relative aspect-[2/3] overflow-hidden rounded-r-md border border-border bg-foreground/[0.025] shadow-[5px_8px_18px_rgba(0,0,0,0.18)]">
+              {book.cover && (
+                <img
+                  src={book.cover}
+                  alt={`${locale === "pt" ? "Capa de" : "Cover of"} ${book.title[locale]}`}
+                  className="h-full w-full object-contain"
+                />
+              )}
+              <span
+                className="absolute inset-y-0 left-0 w-1.5 border-r border-black/20 bg-black/10"
+                aria-hidden="true"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-background/90 px-2 py-2 backdrop-blur-sm">
+                <h4 className="truncate text-[10px] font-medium text-foreground">
+                  {book.title[locale]}
+                </h4>
+                <p className="mt-0.5 truncate font-mono text-[8px] text-muted">
+                  {book.author}
+                </p>
+                {book.rating && (
+                  <div className="mt-1.5 scale-90 origin-left">
+                    <Stars rating={book.rating} />
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        </article>
-      ))}
+            </div>
+          </article>
+        ))}
+      </div>
+      <div
+        className="relative h-4 rounded-sm border border-border bg-foreground/[0.045] shadow-[0_8px_18px_rgba(0,0,0,0.14)]"
+        aria-hidden="true"
+      >
+        <span className="absolute inset-x-2 top-1 h-px bg-foreground/10" />
+      </div>
     </div>
   );
 }
