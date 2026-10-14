@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useTranslation } from "@/components/language-provider";
-import { SectionHeading } from "@/components/section-heading";
 import { languages } from "@/data/resume";
 
 const LEVEL_PERCENT: Record<string, number> = {
@@ -16,8 +15,15 @@ export function Languages() {
   const { t, locale } = useTranslation();
 
   return (
-    <section id="languages" className="scroll-mt-20 py-16 sm:py-24">
-      <SectionHeading>{t.languages.title}</SectionHeading>
+    <section
+      id="languages"
+      className="scroll-mt-20 border-t border-border py-12 sm:py-16 lg:py-20"
+    >
+      <div className="mb-8 border-b border-border pb-6">
+        <h2 className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
+          {t.languages.title}
+        </h2>
+      </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
         {languages.map((lang, i) => (
@@ -68,7 +74,8 @@ export function Languages() {
                   strokeDasharray={2 * Math.PI * 26}
                   initial={{ strokeDashoffset: 2 * Math.PI * 26 }}
                   whileInView={{
-                    strokeDashoffset: 2 * Math.PI * 26 * (1 - LEVEL_PERCENT[lang.level] / 100),
+                    strokeDashoffset:
+                      2 * Math.PI * 26 * (1 - LEVEL_PERCENT[lang.level] / 100),
                   }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.3 + i * 0.15 }}
