@@ -89,7 +89,7 @@ export function Services() {
       <div className="mb-12 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end sm:mb-16">
         <div>
           <p className="mb-3 font-mono text-[10px] text-accent">
-            02 — {t.services.eyebrow}
+            {t.services.eyebrow}
           </p>
           <h2 className="text-2xl font-medium tracking-[-0.04em] text-foreground sm:text-4xl">
             {t.services.title}

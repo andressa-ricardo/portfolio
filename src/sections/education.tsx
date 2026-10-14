@@ -1,61 +1,153 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "@/components/language-provider";
-import { SectionHeading } from "@/components/section-heading";
 import { education } from "@/data/resume";
+import type { Locale } from "@/components/language-provider";
+
+function formatPeriod(
+  start: string,
+  end: string | null,
+  locale: Locale,
+  present: string,
+) {
+  const format = (value: string) => {
+    const date = new Date(`${value}-01`);
+    return date.toLocaleDateString(locale === "pt" ? "pt-BR" : "en-US", {
+      month: "short",
+      year: "numeric",
+    });
+  };
+
+  return `${format(start)} — ${end ? format(end) : present}`;
+}
 
 export function Education() {
   const { t, locale } = useTranslation();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const selected = education[selectedIndex] ?? education[0];
 
   return (
-    <section id="education" className="scroll-mt-20 py-16 sm:py-24">
-      <SectionHeading>{t.education.title}</SectionHeading>
+    <section
+      id="education"
+      className="scroll-mt-20 border-t border-border py-12 sm:py-16 lg:py-20"
+    >
+      <div className="mb-8 flex items-center justify-between gap-4 border-b border-border pb-6">
+        <p className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
+          <span className="text-accent"></span> {t.education.title}
+        </p>
+      </div>
 
-      <div className="space-y-6">
-        {education.map((edu, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.1 }}
-            className="group rounded-2xl border border-border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 sm:p-6"
-          >
-            <div className="flex flex-col gap-4 min-[420px]:flex-row min-[420px]:items-start">
-              {/* Icon */}
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-                  <path d="M22 10v6" />
-                  <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
-                </svg>
-              </div>
+      <div className="grid gap-10 lg:grid-cols-[minmax(260px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
+        <div
+          className="border-l border-border pl-5 sm:pl-7"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          {education.map((item, index) => {
+            const active = selectedIndex === index;
+            return (
+              <motion.button
+                key={`${item.institution}-${item.period.start}`}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: index * 0.05 }}
+                onClick={() => setSelectedIndex(index)}
+                className={`relative w-full border-b border-border px-4 py-5 text-left transition-colors sm:px-5 ${active ? "bg-accent/10" : "hover:bg-foreground/[0.025]"}`}
+              >
+                {active && (
+                  <span className="absolute -left-[29px] top-0 h-full w-px bg-accent sm:-left-[37px]" />
+                )}
+                <time className="text-[11px] text-muted">
+                  {formatPeriod(
+                    item.period.start,
+                    item.period.end,
+                    locale,
+                    t.experience.present,
+                  )}
+                </time>
+                <h3
+                  className={`mt-3 text-base font-medium tracking-[-0.02em] transition-colors ${active ? "text-accent" : "text-foreground"}`}
+                >
+                  {item.institution}
+                </h3>
+                <p className="mt-2 text-xs leading-5 text-muted">
+                  {item.degree[locale]}
+                </p>
+              </motion.button>
+            );
+          })}
+        </div>
 
-              <div className="flex-1">
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+        <div className="min-w-0">
+          <AnimatePresence mode="wait">
+            {selected && (
+              <motion.article
+                key={`${selected.institution}-${selected.period.start}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.25 }}
+              >
+                <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-full border border-accent/40 text-accent">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                    <path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-medium tracking-[-0.035em] text-foreground sm:text-3xl">
+                  {selected.field[locale]}
+                </h2>
+                <p className="mt-3 text-sm font-semibold text-accent">
+                  {selected.institution}
+                </p>
+                <div className="mt-7 grid gap-3 border-y border-border py-5 sm:grid-cols-2">
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {edu.field[locale]}
-                    </h3>
-                    <p className="text-sm text-muted">
-                      {edu.degree[locale]} — <span className="font-medium text-accent">{edu.institution}</span>
+                    <p className="text-[10px] uppercase tracking-[0.08em] text-muted">
+                      {t.education.degreeLabel}
+                    </p>
+                    <p className="mt-2 text-sm font-medium text-foreground">
+                      {selected.degree[locale]}
                     </p>
                   </div>
-                  <time className="shrink-0 text-sm text-muted">
-                    {edu.period.start} — {edu.period.end ?? "..."}
-                  </time>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.08em] text-muted">
+                      {t.education.periodLabel}
+                    </p>
+                    <p className="mt-2 text-sm font-medium text-foreground">
+                      {formatPeriod(
+                        selected.period.start,
+                        selected.period.end,
+                        locale,
+                        t.experience.present,
+                      )}
+                    </p>
+                  </div>
                 </div>
-
-                {edu.description && (
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
-                    {edu.description[locale]}
+                {selected.description && (
+                  <p className="mt-7 max-w-2xl text-sm leading-7 text-muted">
+                    {selected.description[locale]}
                   </p>
                 )}
-              </div>
-            </div>
-          </motion.div>
-        ))}
+              </motion.article>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );

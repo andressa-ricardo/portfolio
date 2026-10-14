@@ -17,7 +17,7 @@ export const education: Education[] = [
       pt: "Análise e Desenvolvimento de Sistemas",
       en: "Systems Analysis and Development",
     },
-    period: { start: "2023-08", end: "2025-12" },
+    period: { start: "2023-08", end: "2026-01" },
     description: {
       pt: "Formação focada em desenvolvimento de software, arquitetura de sistemas, banco de dados e práticas modernas de engenharia de software.",
       en: "Program focused on software development, systems architecture, databases, and modern software engineering practices.",
@@ -41,12 +41,7 @@ export const education: Education[] = [
   },
 ];
 
-export type CourseCategory =
-  | "aws"
-  | "java"
-  | "n8n"
-  | "reactNative"
-  | "advpl";
+export type CourseCategory = "aws" | "java" | "n8n" | "reactNative" | "advpl";
 
 export interface Course {
   name: { pt: string; en: string };

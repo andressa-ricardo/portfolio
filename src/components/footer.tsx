@@ -57,9 +57,7 @@ export function Footer() {
         <p className="text-[10px] uppercase tracking-[0.06em] text-muted">
           © {new Date().getFullYear()} {t.header.name}
         </p>
-        <p className="hidden text-[10px] uppercase tracking-[0.06em] text-muted md:block">
-          {t.home.footerLine}
-        </p>
+
         <div className="flex items-center gap-4">
           {socials.map((social) => (
             <a

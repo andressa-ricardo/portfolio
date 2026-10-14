@@ -6,7 +6,6 @@
     "universe": "A small universe of mine",
     "intro": "Creating meaningful digital experiences with code, creativity, and curiosity.",
     "direction": "Choose a direction. Make yourself at home.",
-    "footerLine": "Made of code & curiosity",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "backHome": "Back home",
@@ -143,7 +142,9 @@
     }
   },
   "education": {
-    "title": "Education"
+    "title": "Education",
+    "degreeLabel": "Degree",
+    "periodLabel": "Period"
   },
   "courses": {
     "title": "Courses & Certifications",

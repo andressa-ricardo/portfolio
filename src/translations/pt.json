@@ -6,7 +6,6 @@
     "universe": "Um pequeno universo meu",
     "intro": "Criando experiências digitais significativas com código, criatividade e curiosidade.",
     "direction": "Escolha uma direção. Sinta-se em casa.",
-    "footerLine": "Feito de código & curiosidade",
     "openMenu": "Abrir menu",
     "closeMenu": "Fechar menu",
     "backHome": "Voltar ao início",
@@ -143,7 +142,9 @@
     }
   },
   "education": {
-    "title": "Educação"
+    "title": "Educação",
+    "degreeLabel": "Formação",
+    "periodLabel": "Período"
   },
   "courses": {
     "title": "Cursos & Certificações",

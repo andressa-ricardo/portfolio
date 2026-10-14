@@ -93,8 +93,8 @@ export function Experience() {
   return (
     <section id="experience" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
       <div className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6">
-        <p className="font-mono text-[10px] text-accent">
-          01 — {t.experience.title}
+        <p className="text-lg font-medium tracking-[-0.03em] text-foreground sm:text-xl">
+          <span className="text-accent"></span> {t.experience.title}
         </p>
         <div
           className="flex flex-wrap gap-1"
