@@ -3,105 +3,79 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/components/language-provider";
-import { SectionHeading } from "@/components/section-heading";
 
 export function About() {
   const { t } = useTranslation();
 
-  return (
-    <section id="about" className="scroll-mt-20 py-16 sm:py-24">
-      <SectionHeading>{t.about.title}</SectionHeading>
+  const facts = [
+    { label: t.about.facts.focus, value: "Frontend · Mobile · Full Stack" },
+    { label: t.about.facts.education, value: "Unigranrio Afya · 2023–2025" },
+    { label: t.about.facts.course, value: t.about.facts.courseValue },
+  ];
 
-      {/* Photo + Text — side by side desktop, stacked mobile */}
-      <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-16">
-        {/* Photo */}
+  return (
+    <section id="about" className="scroll-mt-20 py-12 sm:py-16 lg:py-20">
+      <div className="grid items-center gap-10 lg:grid-cols-[minmax(260px,0.72fr)_minmax(0,1.28fr)] lg:gap-14 xl:gap-20">
         <motion.div
-          initial={{ opacity: 0, x: -24 }}
+          initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="w-full max-w-[240px] shrink-0 sm:max-w-[280px]"
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="w-full max-w-[380px] justify-self-center"
         >
-          <motion.div
-            className="relative"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            {/* Decorative ring */}
-            <motion.div
-              className="absolute -inset-3 rounded-3xl border-2 border-accent/20"
-              animate={{ rotate: [0, 2, 0, -2, 0] }}
-              transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            />
-            {/* Decorative dot */}
-            <span className="absolute -right-2 -top-2 flex h-4 w-4">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-              <span className="relative inline-flex h-4 w-4 rounded-full bg-accent" />
-            </span>
-            <Image
-              src="/andressa_picture.jpeg"
-              alt={t.about.photoAlt}
-              width={280}
-              height={280}
-              className="relative aspect-square w-full rounded-2xl object-cover shadow-xl shadow-accent/10"
-              priority
-            />
-          </motion.div>
+          <Image
+            src="/image.png"
+            alt={t.about.photoAlt}
+            width={640}
+            height={640}
+            sizes="(max-width: 1024px) 80vw, 380px"
+            className="h-auto w-full border border-border object-contain"
+            priority
+          />
         </motion.div>
 
-        {/* Text content */}
-        <div className="flex-1 space-y-6">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-base leading-relaxed text-muted sm:text-lg"
-          >
-            {t.about.p1}
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="text-base leading-relaxed text-muted sm:text-lg"
-          >
-            {t.about.p2}
-          </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.08 }}
+          className="flex flex-col justify-center"
+        >
+          <p className="mb-4 text-[10px] uppercase tracking-[0.08em] text-muted">
+            {t.about.location}
+          </p>
+          <div className="space-y-4 text-sm leading-7 text-muted sm:text-[15px]">
+            <p>{t.about.p1}</p>
+            <p>{t.about.p2}</p>
+          </div>
 
-          {/* Location + availability */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            className="flex flex-wrap gap-4 pt-2"
-          >
-            <span className="inline-flex items-center gap-2 text-sm text-foreground">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-accent"
+          <dl className="mt-7 border-t border-border">
+            {facts.map((fact) => (
+              <div
+                key={fact.label}
+                className="grid gap-2 border-b border-border py-4 sm:grid-cols-[130px_1fr] sm:items-center"
               >
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              {t.about.location}
-            </span>
-
-            <span className="inline-flex items-center gap-2 text-sm text-foreground">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
-              {t.about.available}
-            </span>
-          </motion.div>
-        </div>
+                <dt className="text-sm text-muted">{fact.label}</dt>
+                <dd className="text-sm font-semibold text-foreground sm:text-right">
+                  {fact.value}
+                </dd>
+              </div>
+            ))}
+            <div className="grid gap-2 border-b border-border py-4 sm:grid-cols-[130px_1fr] sm:items-center">
+              <dt className="text-sm text-muted">{t.about.facts.building}</dt>
+              <dd className="sm:text-right">
+                <a
+                  href="https://www.maoslivres.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+                >
+                  Mãos Livres <span aria-hidden="true">↗</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </motion.div>
       </div>
     </section>
   );

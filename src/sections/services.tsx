@@ -2,38 +2,76 @@
 
 import { motion } from "framer-motion";
 import { useTranslation } from "@/components/language-provider";
-import { SectionHeading } from "@/components/section-heading";
 
 const SERVICE_IDS = ["mobile", "frontend", "automation", "scraping"] as const;
 
-const SERVICE_ICONS: Record<string, React.ReactNode> = {
+const SERVICE_ICONS: Record<(typeof SERVICE_IDS)[number], React.ReactNode> = {
   mobile: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect width="14" height="20" x="5" y="2" rx="3" />
-      <path d="M12 18h.01" />
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect width="13" height="20" x="5.5" y="2" rx="2.5" />
+      <path d="M10 5h4M12 18.5h.01" />
     </svg>
   ),
   frontend: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="2" y="3" width="20" height="18" rx="2" />
+      <path d="M2 8h20M6 5.5h.01M9 5.5h.01M8 13l-2 2 2 2M16 13l2 2-2 2" />
     </svg>
   ),
   automation: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M13 2 4 14h8l-1 8 9-12h-8l1-8Z" />
     </svg>
   ),
   scraping: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <ellipse cx="12" cy="5" rx="9" ry="3" />
-      <path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5" />
-      <path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3" />
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <ellipse cx="12" cy="5" rx="8.5" ry="3" />
+      <path d="M3.5 5v7c0 1.7 3.8 3 8.5 3s8.5-1.3 8.5-3V5M3.5 12v7c0 1.7 3.8 3 8.5 3s8.5-1.3 8.5-3v-7" />
     </svg>
   ),
 };
 
-const SERVICE_TAGS: Record<string, string[]> = {
+const SERVICE_TAGS: Record<(typeof SERVICE_IDS)[number], string[]> = {
   mobile: ["React Native", "Expo", "TypeScript"],
   frontend: ["React", "Next.js", "TypeScript", "Landing Pages"],
   automation: ["Node.js", "Python", "Selenium"],
@@ -44,66 +82,62 @@ export function Services() {
   const { t } = useTranslation();
 
   return (
-    <section id="services" className="scroll-mt-20 py-16 sm:py-24">
-      <SectionHeading>{t.services.title}</SectionHeading>
+    <section
+      id="services"
+      className="scroll-mt-20 border-t border-border py-16 sm:py-24"
+    >
+      <div className="mb-12 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end sm:mb-16">
+        <div>
+          <p className="mb-3 font-mono text-[10px] text-accent">
+            02 — {t.services.eyebrow}
+          </p>
+          <h2 className="text-2xl font-medium tracking-[-0.04em] text-foreground sm:text-4xl">
+            {t.services.title}
+            <span className="text-accent">.</span>
+          </h2>
+        </div>
+        <p className="max-w-2xl text-base leading-relaxed text-muted md:justify-self-end">
+          {t.services.subtitle}
+        </p>
+      </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-        className="-mt-4 mb-10 max-w-xl text-base leading-relaxed text-muted sm:mb-12 sm:text-lg"
-      >
-        {t.services.subtitle}
-      </motion.p>
-
-      <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
-        {SERVICE_IDS.map((id, i) => {
+      <div className="grid border-l border-t border-border sm:grid-cols-2">
+        {SERVICE_IDS.map((id, index) => {
           const item = t.services.items[id];
-
           return (
-            <motion.div
+            <motion.article
               key={id}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.45, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-foreground/2 to-transparent p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 sm:p-7"
+              transition={{ duration: 0.45, delay: index * 0.07 }}
+              className="group relative min-h-[310px] border-b border-r border-border p-6 transition-colors hover:bg-accent/[0.035] sm:p-8"
             >
-              {/* Hover glow */}
-              <div className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-accent/15 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
-
-              {/* Index number */}
-              <span className="pointer-events-none absolute right-5 top-4 text-5xl font-bold leading-none text-foreground/5 transition-colors duration-300 group-hover:text-accent/15">
-                0{i + 1}
-              </span>
-
-              <div className="relative">
-                {/* Icon */}
-                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 text-accent ring-1 ring-accent/15 transition-all duration-300 group-hover:from-accent group-hover:to-accent group-hover:text-white group-hover:shadow-lg group-hover:shadow-accent/30 group-hover:ring-accent/40">
+              <div className="flex items-start justify-between gap-4">
+                <span className="font-mono text-[10px] text-accent">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-border text-accent transition-all group-hover:border-accent group-hover:bg-accent group-hover:text-white">
                   {SERVICE_ICONS[id]}
-                </div>
-
-                <h3 className="text-lg font-semibold text-foreground sm:text-xl">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {item.desc}
-                </p>
-
-                {/* Tech tags */}
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {SERVICE_TAGS[id].map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-border bg-background/40 px-2.5 py-0.5 text-xs font-medium text-muted transition-colors duration-300 group-hover:border-accent/25 group-hover:text-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                </span>
               </div>
-            </motion.div>
+              <h3 className="mt-8 max-w-sm text-xl font-semibold tracking-[-0.025em] text-foreground">
+                {item.title}
+              </h3>
+              <p className="mt-3 max-w-md text-sm leading-6 text-muted">
+                {item.desc}
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {SERVICE_TAGS[id].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-border px-3 py-1 text-[11px] font-medium text-muted transition-colors group-hover:border-accent/30 group-hover:text-foreground"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.article>
           );
         })}
       </div>

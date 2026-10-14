@@ -73,10 +73,22 @@
     "location": "Rio de Janeiro, Brasil",
     "available": "Disponível para projetos e trabalhos",
     "skillsTitle": "Habilidades",
-    "photoAlt": "Foto de Andressa"
+    "photoAlt": "Foto de Andressa",
+    "portraitLabel": "Meu retrato",
+    "headline": "Oi, sou a Andressa. Transformo ideias complexas em experiências digitais.",
+    "intro": "Sou desenvolvedora de software com atuação em frontend, mobile e full stack.",
+    "story": "Minha experiência passa por aplicações web e mobile, produtos SaaS, integrações de pagamento e plataformas de inteligência artificial. Como cofundadora da Mãos Livres, também atuo na interseção entre automação inteligente e engenharia de dados. Me interesso pelo encontro entre tecnologia, design e produtos significativos.",
+    "facts": {
+      "focus": "Foco",
+      "education": "Formação",
+      "course": "Curso",
+      "courseValue": "Análise e Desenvolvimento de Sistemas",
+      "building": "Também construindo"
+    }
   },
   "services": {
     "title": "O que eu faço",
+    "eyebrow": "Serviços",
     "subtitle": "De websites, landing pages e apps mobile à automação, construo produtos digitais com foco em qualidade, performance e resultado.",
     "items": {
       "mobile": {

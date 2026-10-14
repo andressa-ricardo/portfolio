@@ -30,27 +30,32 @@ export function SpacePage({
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45 }}
-        className="border-b border-border pb-8 pt-10 sm:pb-12 sm:pt-16"
+        className="border-b border-border py-8 sm:py-10"
       >
-        <Link
-          href="/"
-          className="mb-8 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.08em] text-muted transition-colors hover:text-accent"
-        >
-          <span aria-hidden="true">←</span> {t.home.backHome}
-        </Link>
-        <div className="flex items-start gap-4 sm:gap-7">
-          <span className="pt-2 font-mono text-[10px] text-accent">
-            {number}
-          </span>
-          <div>
-            <h1 className="text-4xl font-light tracking-[-0.05em] text-foreground sm:text-6xl">
-              {content.title}
-              <span className="text-accent">.</span>
-            </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
-              {content.description}
-            </p>
-          </div>
+        <div className="flex items-center gap-4 sm:gap-6">
+          <Link
+            href="/"
+            aria-label={t.home.backHome}
+            title={t.home.backHome}
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-muted transition-all hover:border-accent hover:text-accent"
+          >
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              aria-hidden="true"
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </Link>
+          <span className="font-mono text-[10px] text-accent">{number}</span>
+          <h1 className="text-2xl font-medium tracking-[-0.04em] text-foreground sm:text-4xl">
+            {content.title}
+            <span className="text-accent">.</span>
+          </h1>
         </div>
       </motion.header>
       {children}

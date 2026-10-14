@@ -73,10 +73,22 @@
     "location": "Rio de Janeiro, Brazil",
     "available": "Available for projects and jobs.",
     "skillsTitle": "Skills",
-    "photoAlt": "Photo of Andressa"
+    "photoAlt": "Photo of Andressa",
+    "portraitLabel": "My portrait",
+    "headline": "Hi, I'm Andressa. I turn complex ideas into digital experiences.",
+    "intro": "I'm a software developer working across frontend, mobile, and full stack.",
+    "story": "My experience spans web and mobile applications, SaaS products, payment integrations, and artificial intelligence platforms. As a co-founder of Mãos Livres, I also work at the intersection of intelligent automation and data engineering. I'm interested in where technology, design, and meaningful products meet.",
+    "facts": {
+      "focus": "Focus",
+      "education": "Education",
+      "course": "Program",
+      "courseValue": "Systems Analysis and Development",
+      "building": "Also building"
+    }
   },
   "services": {
     "title": "What I do",
+    "eyebrow": "Services",
     "subtitle": "From websites, landing pages, and mobile apps to automation, I build digital products focused on quality, performance, and results.",
     "items": {
       "mobile": {
