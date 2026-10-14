@@ -18,7 +18,7 @@ const TABS: Tab[] = ["spotify", "shelf", "interests", "current"];
 
 function EmptyState({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-dashed border-border px-5 py-8 text-sm leading-6 text-muted">
+    <div className="rounded-2xl border border-dashed border-border px-5 py-7 font-mono text-xs leading-6 text-muted">
       {children}
     </div>
   );
@@ -36,7 +36,7 @@ function Stars({ rating = 0 }: { rating?: number }) {
           fill={star <= rating ? "currentColor" : "none"}
           stroke="currentColor"
           strokeWidth="1.6"
-          className={star <= rating ? "text-accent" : "text-border"}
+          className={star <= rating ? "text-foreground/70" : "text-border"}
           aria-hidden="true"
         >
           <path d="m12 2.5 2.9 5.88 6.49.94-4.7 4.58 1.11 6.47L12 17.32l-5.8 3.05 1.11-6.47-4.7-4.58 6.49-.94L12 2.5Z" />
@@ -71,11 +71,13 @@ function BookGrid({
               className="aspect-[2/3] w-full bg-foreground/[0.025] object-contain"
             />
           )}
-          <div className="p-5">
-            <h4 className="font-medium text-foreground">
+          <div className="p-4">
+            <h4 className="text-sm font-medium text-foreground">
               {book.title[locale]}
             </h4>
-            <p className="mt-1 text-xs text-muted">{book.author}</p>
+            <p className="mt-1 font-mono text-[10px] text-muted">
+              {book.author}
+            </p>
             {book.rating && (
               <div className="mt-4">
                 <Stars rating={book.rating} />
@@ -112,7 +114,7 @@ export function BeyondCode() {
             role="tab"
             aria-selected={activeTab === tab}
             onClick={() => setActiveTab(tab)}
-            className={`shrink-0 rounded-full px-5 py-3 text-sm font-medium transition-colors ${activeTab === tab ? "bg-accent text-white" : "border border-border text-muted hover:border-accent/40 hover:text-foreground"}`}
+            className={`shrink-0 rounded-full border px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.04em] transition-colors ${activeTab === tab ? "border-foreground/20 bg-foreground/[0.06] text-foreground" : "border-border text-muted hover:border-foreground/30 hover:text-foreground"}`}
           >
             {t.beyondPage.tabs[tab]}
           </button>
@@ -131,10 +133,10 @@ export function BeyondCode() {
             {activeTab === "spotify" && (
               <div>
                 <div className="max-w-2xl">
-                  <h3 className="mt-4 text-3xl font-medium tracking-[-0.04em] text-foreground sm:text-4xl">
+                  <h3 className="mt-3 text-2xl font-medium tracking-[-0.035em] text-foreground sm:text-3xl">
                     {t.beyondPage.spotifyTitle}
                   </h3>
-                  <p className="mt-4 text-sm leading-7 text-muted">
+                  <p className="mt-3 font-mono text-xs leading-6 text-muted">
                     {t.beyondPage.spotifyDescription}
                   </p>
                 </div>
@@ -181,7 +183,7 @@ export function BeyondCode() {
                           ) : (
                             <div
                               key={`${song.title}-${song.artist}`}
-                              className={`flex items-center rounded-2xl border transition-colors ${activeSongIndex === index ? "border-accent/50 bg-accent/[0.06]" : "border-border hover:border-accent/40 hover:bg-accent/[0.035]"}`}
+                              className="flex items-center rounded-2xl border border-border transition-colors hover:border-foreground/20 hover:bg-foreground/[0.025]"
                             >
                               <button
                                 type="button"
@@ -189,7 +191,7 @@ export function BeyondCode() {
                                 className="flex min-w-0 flex-1 items-center gap-3 p-3 text-left"
                                 aria-label={`Tocar ${song.title}, de ${song.artist}`}
                               >
-                                <span className="font-mono text-[10px] text-accent">
+                                <span className="font-mono text-[9px] text-muted">
                                   {String(index + 1).padStart(2, "0")}
                                 </span>
                                 {song.cover && (
@@ -201,10 +203,10 @@ export function BeyondCode() {
                                   />
                                 )}
                                 <span className="min-w-0">
-                                  <strong className="block truncate text-sm font-medium text-foreground">
+                                  <strong className="block truncate text-xs font-medium text-foreground">
                                     {song.title}
                                   </strong>
-                                  <span className="block truncate text-xs text-muted">
+                                  <span className="block truncate font-mono text-[10px] text-muted">
                                     {song.artist}
                                   </span>
                                 </span>
@@ -213,7 +215,7 @@ export function BeyondCode() {
                                 href={song.spotifyUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mr-4 rounded-full p-2 text-accent transition-colors hover:bg-accent/10"
+                                className="mr-4 rounded-full p-2 text-muted transition-colors hover:bg-foreground/[0.06] hover:text-foreground"
                                 aria-label={`Abrir ${song.title} no Spotify`}
                                 title="Abrir no Spotify"
                               >
@@ -231,10 +233,10 @@ export function BeyondCode() {
 
             {activeTab === "shelf" && (
               <div>
-                <h3 className="text-3xl font-medium tracking-[-0.04em] text-foreground">
+                <h3 className="text-2xl font-medium tracking-[-0.035em] text-foreground">
                   {t.beyondPage.shelfTitle}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-muted">
+                <p className="mt-3 font-mono text-xs leading-6 text-muted">
                   {t.beyondPage.shelfDescription}
                 </p>
                 <div
@@ -246,7 +248,7 @@ export function BeyondCode() {
                     type="button"
                     onClick={() => setShelfView("read")}
                     aria-pressed={shelfView === "read"}
-                    className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${shelfView === "read" ? "bg-accent text-white" : "border border-border text-muted hover:border-accent/40 hover:text-foreground"}`}
+                    className={`rounded-full border px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.04em] transition-colors ${shelfView === "read" ? "border-foreground/20 bg-foreground/[0.06] text-foreground" : "border-border text-muted hover:border-foreground/30 hover:text-foreground"}`}
                   >
                     {t.beyondPage.read}
                   </button>
@@ -254,7 +256,7 @@ export function BeyondCode() {
                     type="button"
                     onClick={() => setShelfView("reading")}
                     aria-pressed={shelfView === "reading"}
-                    className={`rounded-full px-5 py-3 text-sm font-medium transition-colors ${shelfView === "reading" ? "bg-accent text-white" : "border border-border text-muted hover:border-accent/40 hover:text-foreground"}`}
+                    className={`rounded-full border px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.04em] transition-colors ${shelfView === "reading" ? "border-foreground/20 bg-foreground/[0.06] text-foreground" : "border-border text-muted hover:border-foreground/30 hover:text-foreground"}`}
                   >
                     {t.beyondPage.readingList}
                   </button>
@@ -281,10 +283,10 @@ export function BeyondCode() {
 
             {activeTab === "interests" && (
               <div>
-                <h3 className="text-3xl font-medium tracking-[-0.04em] text-foreground">
+                <h3 className="text-2xl font-medium tracking-[-0.035em] text-foreground">
                   {t.beyondPage.interestsTitle}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-muted">
+                <p className="mt-3 font-mono text-xs leading-6 text-muted">
                   {t.beyondPage.interestsDescription}
                 </p>
                 <div className="mt-8 max-w-3xl">
@@ -298,11 +300,11 @@ export function BeyondCode() {
                           className="flex items-start gap-4"
                         >
                           <span
-                            className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-accent"
+                            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/35"
                             aria-hidden="true"
                           />
                           {interest.detail && (
-                            <p className="text-sm leading-7 text-muted sm:text-base">
+                            <p className="font-mono text-xs leading-6 text-muted">
                               {interest.detail[locale]}
                             </p>
                           )}
@@ -316,13 +318,13 @@ export function BeyondCode() {
 
             {activeTab === "current" && (
               <div>
-                <h3 className="text-3xl font-medium tracking-[-0.04em] text-foreground">
+                <h3 className="text-2xl font-medium tracking-[-0.035em] text-foreground">
                   {t.beyondPage.currentTitle}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-muted">
+                <p className="mt-3 font-mono text-xs leading-6 text-muted">
                   {t.beyondPage.currentDescription}
                 </p>
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <div className="mt-7 grid gap-3 sm:grid-cols-3">
                   {currentMoments.length === 0 ? (
                     <div className="sm:col-span-2">
                       <EmptyState>{t.beyondPage.currentEmpty}</EmptyState>
@@ -331,12 +333,12 @@ export function BeyondCode() {
                     currentMoments.map((item) => (
                       <article
                         key={item.category[locale]}
-                        className="rounded-2xl border border-border p-5"
+                        className="rounded-2xl border border-border bg-foreground/[0.015] p-4"
                       >
-                        <p className="text-[10px] uppercase tracking-[0.08em] text-accent">
+                        <p className="font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
                           {item.category[locale]}
                         </p>
-                        <p className="mt-3 text-base font-medium text-foreground">
+                        <p className="mt-2 font-mono text-xs leading-5 text-foreground">
                           {item.value[locale]}
                         </p>
                       </article>
