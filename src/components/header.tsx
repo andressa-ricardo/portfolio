@@ -32,9 +32,6 @@ export function Header() {
           <span className="text-[2rem] font-semibold leading-none tracking-[-0.08em] text-foreground">
             ar<span className="text-accent">.</span>
           </span>
-          <span className="hidden text-[10px] font-medium uppercase tracking-[0.06em] text-muted transition-colors group-hover:text-foreground sm:block">
-            {t.header.name}
-          </span>
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-3">

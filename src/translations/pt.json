@@ -1,9 +1,5 @@
 {
-  "header": {
-    "name": "Andressa Ricardo"
-  },
   "home": {
-    "intro": "Criando experiências digitais significativas com código, criatividade e curiosidade.",
     "openMenu": "Abrir menu",
     "closeMenu": "Fechar menu",
     "backHome": "Voltar ao início",

@@ -57,7 +57,7 @@ export function Footer() {
     <footer className="border-t border-border/70">
       <div className="mx-auto flex min-h-[72px] w-full max-w-[1728px] flex-col items-center justify-between gap-3 px-5 py-4 sm:flex-row sm:px-8 lg:px-12">
         <p className="font-mono text-[9px] uppercase tracking-[0.06em] text-muted">
-          © {new Date().getFullYear()} {t.header.name}
+          © {new Date().getFullYear()}
         </p>
 
         <div className="flex items-center gap-4">

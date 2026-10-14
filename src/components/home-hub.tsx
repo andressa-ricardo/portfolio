@@ -184,20 +184,14 @@ export function HomeHub() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.22 }}
             className="mt-6 max-w-md font-mono text-[11px] leading-6 text-muted sm:text-xs"
-          >
-            {t.home.intro}
-          </motion.p>
+          ></motion.p>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-5 flex items-center gap-4 font-mono text-[9px] uppercase tracking-[0.08em] text-muted"
           >
-            <span>Frontend</span>
-            <span className="text-foreground/30">•</span>
-            <span>Mobile</span>
-            <span className="text-foreground/30">•</span>
-            <span>Full stack</span>
+            <span>Full stack Developer</span>
           </motion.div>
         </div>
 
